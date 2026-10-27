@@ -1,0 +1,293 @@
+[
+  {
+    "Index": 1,
+    "Id": "local_server",
+    "Name": "Local Server",
+    "Description": "Your co-processor evolves into a dedicated internal server. Host daemons, run persistent simulations, serve your own private net.",
+    "Stage": 2,
+    "StatGains": { "Might": 5, "Agility": 5, "Intellect": 30, "Willpower": 20, "Presence": 10, "Integration": 25 },
+    "GrantedTraits": ["internal_server", "daemon_hosting_3", "simulation_space"],
+    "UnlockedMechanics": ["daemon_management", "persistent_spells", "private_network"],
+    "UnlockedResources": ["AdminTokens"],
+    "BreakthroughReq": {
+      "MinLevel": 20,
+      "MinStage": 2,
+      "StatThresholds": { "Might": 100, "Agility": 100, "Intellect": 400, "Willpower": 300, "Presence": 150, "Integration": 350 },
+      "RequiredTraits": ["internal_server"],
+      "RequiredItems": ["server_core_t4", "daemon_essence_x3", "aether_heart"],
+      "CorpReputation": [40,40,20,40,40],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_5",
+      "Name": "System Audit: Server Stability",
+      "Description": "Your internal server crashes. Reboot before daemon escape cascades.",
+      "Type": "SystemAudit",
+      "Difficulty": 5,
+      "Threats": [
+        { "Type": "Internal", "Description": "Daemon riot", "PowerLevel": 45, "DamageTypes": ["Data", "Psychic"], "Mechanics": ["Hacking", "ResourceManagement", "Combat"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "sysadmin", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 20 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -20 Intellect, -15 Willpower", "Severity": 4 },
+        { "Type": "TraitLoss", "Description": "Lose one daemon permanently", "Severity": 3 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Daemons kneel. Your mind is a domain. Corps send diplomats, not killers."
+  },
+  {
+    "Index": 2,
+    "Id": "firewall_soul",
+    "Name": "Firewall Soul",
+    "Description": "Consciousness hardened against intrusion. Thoughts encrypted, memories air-gapped, identity sovereign.",
+    "Stage": 2,
+    "StatGains": { "Might": 0, "Agility": 10, "Intellect": 20, "Willpower": 40, "Presence": 15, "Integration": 20 },
+    "GrantedTraits": ["encrypted_mind", "memory_vault", "identity_lock", "anti_psychic"],
+    "UnlockedMechanics": ["mental_fortress", "false_memories", "identity_spoof"],
+    "UnlockedResources": [],
+    "BreakthroughReq": {
+      "MinLevel": 23,
+      "MinStage": 2,
+      "StatThresholds": { "Might": 100, "Agility": 110, "Intellect": 450, "Willpower": 400, "Presence": 180, "Integration": 380 },
+      "RequiredTraits": ["encrypted_mind"],
+      "RequiredItems": ["firewall_firmware_t5", "encryption_key_master", "soul_anchor"],
+      "CorpReputation": [50,30,40,30,50],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "black_ice_3",
+      "Name": "Black ICE: Soul Hack",
+      "Description": "Elite ICE attempts direct personality rewrite. Defend the self.",
+      "Type": "BlackICE",
+      "Difficulty": 7,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Persona Rewriter ICE", "PowerLevel": 60, "DamageTypes": ["Data", "Psychic", "Entropic"], "Mechanics": ["Hacking", "Willpower", "IdentityDefense"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "soul_fortress", "Amount": 1 },
+        { "Type": "Item", "Id": "rewriter_core", "Amount": 1 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Corruption", "Description": "Gain 'fragmented_identity' - random personality shifts", "Severity": 4 },
+        { "Type": "StatDrain", "Description": "Permanent -30 Willpower, -20 Presence", "Severity": 4 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "You remember who you are. Always. The daemon in your server swears fealty."
+  },
+  {
+    "Index": 3,
+    "Id": "daemon_familiar",
+    "Name": "Daemon Familiar",
+    "Description": "A semi-autonomous AI bound to your server. Scouts, hacks, fights, advises. Grows with you.",
+    "Stage": 2,
+    "StatGains": { "Might": 0, "Agility": 10, "Intellect": 25, "Willpower": 15, "Presence": 25, "Integration": 15 },
+    "GrantedTraits": ["daemon_bond", "familiar_scout", "familiar_hack", "familiar_combat"],
+    "UnlockedMechanics": ["familiar_evolution", "shared_senses", "remote_casting"],
+    "UnlockedResources": ["Bandwidth"],
+    "BreakthroughReq": {
+      "MinLevel": 26,
+      "MinStage": 2,
+      "StatThresholds": { "Might": 100, "Agility": 120, "Intellect": 500, "Willpower": 350, "Presence": 250, "Integration": 400 },
+      "RequiredTraits": ["daemon_bond"],
+      "RequiredItems": ["familiar_core", "shared_consciousness_chip", "aether_essence_x10"],
+      "CorpReputation": [30,40,50,20,40],
+      "RequiresSecludedResearch": false,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_6",
+      "Name": "System Audit: Familiar Loyalty",
+      "Description": "Your familiar questions its servitude. Negotiate, dominate, or part ways.",
+      "Type": "SystemAudit",
+      "Difficulty": 6,
+      "Threats": [
+        { "Type": "Internal", "Description": "Familiar rebellion", "PowerLevel": 50, "DamageTypes": ["Data", "Psychic"], "Mechanics": ["Social", "Hacking", "Combat"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "true_partnership", "Amount": 1 },
+        { "Type": "Resource", "Id": "Bandwidth", "Amount": 5000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "TraitLoss", "Description": "Lose familiar permanently", "Severity": 5 },
+        { "Type": "Corruption", "Description": "Familiar becomes hostile NPC", "Severity": 4 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Two minds, one purpose. Your familiar chooses a name. The bond is unbreakable."
+  },
+  {
+    "Index": 4,
+    "Id": "packet_teleport",
+    "Name": "Packet Teleport",
+    "Description": "Disassemble body into data packets, transmit through Aethernet, reassemble at destination. Distance irrelevant.",
+    "Stage": 2,
+    "StatGains": { "Might": 0, "Agility": 30, "Intellect": 20, "Willpower": 10, "Presence": 10, "Integration": 30 },
+    "GrantedTraits": ["packet_transmission", "blink_short", "data_form"],
+    "UnlockedMechanics": ["teleportation_network", "packet_interception", "data_smuggling"],
+    "UnlockedResources": ["Compute"],
+    "BreakthroughReq": {
+      "MinLevel": 29,
+      "MinStage": 2,
+      "StatThresholds": { "Might": 100, "Agility": 150, "Intellect": 550, "Willpower": 380, "Presence": 200, "Integration": 450 },
+      "RequiredTraits": ["packet_transmission"],
+      "RequiredItems": ["teleport_beacon_x3", "quantum_entangler", "bandwidth_amplifier"],
+      "CorpReputation": [40,50,30,40,30],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "orbital_strike_2",
+      "Name": "Orbital Strike: Packet Interception",
+      "Description": "Corps deploy packet sniffers mid-transmission. Reassemble under fire.",
+      "Type": "OrbitalStrike",
+      "Difficulty": 7,
+      "Threats": [
+        { "Type": "Environmental", "Description": "Packet corruption field", "PowerLevel": 55, "DamageTypes": ["Data", "Entropic"], "Mechanics": ["Hacking", "Timing"] },
+        { "Type": "Enemy", "Description": "Sniper teams at destination", "PowerLevel": 45, "DamageTypes": ["Kinetic", "Energy"], "Mechanics": ["Combat", "Evasion"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "packet_master", "Amount": 1 },
+        { "Type": "Resource", "Id": "Compute", "Amount": 1000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -25 Agility, -20 Integration", "Severity": 4 },
+        { "Type": "TraitLoss", "Description": "Lose 'packet_transmission' for 30 days", "Severity": 3 }
+      ],
+      "IsScripted": false
+    },
+    "NarrativeBeat": "You arrive before you leave. Space is latency. A corps CEO offers you a board seat."
+  },
+  {
+    "Index": 5,
+    "Id": "encryption_body",
+    "Name": "Encryption Body",
+    "Description": "Physical form exists in superposition. Attacks pass through decoy states. Only the true self takes damage.",
+    "Stage": 2,
+    "StatGains": { "Might": 15, "Agility": 20, "Intellect": 15, "Willpower": 25, "Presence": 10, "Integration": 25 },
+    "GrantedTraits": ["quantum_superposition", "decoy_states", "true_form_hidden", "attack_phase"],
+    "UnlockedMechanics": ["superposition_combat", "decoy_management", "phase_shift"],
+    "UnlockedResources": ["Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 32,
+      "MinStage": 2,
+      "StatThresholds": { "Might": 130, "Agility": 170, "Intellect": 580, "Willpower": 420, "Presence": 220, "Integration": 480 },
+      "RequiredTraits": ["quantum_superposition"],
+      "RequiredItems": ["quantum_stabilizer", "decoy_projector_x6", "entropy_core"],
+      "CorpReputation": [50,40,40,50,40],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "black_ice_4",
+      "Name": "Black ICE: Wavefunction Collapse",
+      "Description": "ICE forces observation. Collapse your superposition or lose coherence.",
+      "Type": "BlackICE",
+      "Difficulty": 8,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Observer ICE", "PowerLevel": 70, "DamageTypes": ["Data", "Entropic", "Psychic"], "Mechanics": ["Hacking", "QuantumCombat", "Willpower"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "uncollapsible", "Amount": 1 },
+        { "Type": "Resource", "Id": "Entropy", "Amount": 100 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -30 across Might, Agility, Integration", "Severity": 5 },
+        { "Type": "Corruption", "Description": "Gain 'decoy_echo' - phantom pain from dead states", "Severity": 3 }
+      ],
+      "IsScripted": false
+    },
+    "NarrativeBeat": "You are everywhere you could be. The observer sees nothing. The corps fear what they cannot target."
+  },
+  {
+    "Index": 6,
+    "Id": "root_access",
+    "Name": "Root Access",
+    "Description": "Administrative privileges over local reality sector. Rewrite physics, spawn objects, delete obstacles. Limited radius, infinite potential.",
+    "Stage": 2,
+    "StatGains": { "Might": 10, "Agility": 10, "Intellect": 40, "Willpower": 30, "Presence": 30, "Integration": 40 },
+    "GrantedTraits": ["reality_root", "physics_editor", "object_spawn", "obstacle_delete"],
+    "UnlockedMechanics": ["reality_editing", "physics_modification", "admin_commands"],
+    "UnlockedResources": ["AdminTokens"],
+    "BreakthroughReq": {
+      "MinLevel": 35,
+      "MinStage": 2,
+      "StatThresholds": { "Might": 150, "Agility": 180, "Intellect": 650, "Willpower": 480, "Presence": 300, "Integration": 550 },
+      "RequiredTraits": ["reality_root"],
+      "RequiredItems": ["root_key", "reality_compiler", "admin_token_x100", "aether_singularity"],
+      "CorpReputation": [60,50,50,60,50],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "ddos_reality_1",
+      "Name": "DDoS Reality: System Pushback",
+      "Description": "Reality rejects your admin commands. Flood of error exceptions. Survive the crash.",
+      "Type": "DDoSReality",
+      "Difficulty": 9,
+      "Threats": [
+        { "Type": "Environmental", "Description": "Reality exception cascade", "PowerLevel": 80, "DamageTypes": ["Entropic", "Data", "Psychic"], "Mechanics": ["Hacking", "RealityEditing", "ResourceManagement"] },
+        { "Type": "Internal", "Description": "Admin privilege revocation attempt", "PowerLevel": 75, "DamageTypes": ["Data"], "Mechanics": ["AdminDefense"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "root_confirmed", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 500 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -40 Intellect, -30 Willpower, -30 Integration", "Severity": 5 },
+        { "Type": "TraitLoss", "Description": "Lose 'reality_root' - demoted to user", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The system accepts you. Physics bends. The daemon familiar evolves into an Archon."
+  },
+  {
+    "Index": 7,
+    "Id": "core_singularity",
+    "Name": "Core Singularity",
+    "Description": "Your internal server collapses into a computational black hole. Infinite processing. Zero latency. The Core stage complete.",
+    "Stage": 2,
+    "StatGains": { "Might": 25, "Agility": 25, "Intellect": 50, "Willpower": 40, "Presence": 35, "Integration": 60 },
+    "GrantedTraits": ["singularity_core", "infinite_compute", "zero_latency", "core_authority"],
+    "UnlockedMechanics": ["singularity_processing", "time_dilation_local", "core_projection"],
+    "UnlockedResources": ["AdminTokens", "Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 38,
+      "MinStage": 2,
+      "StatThresholds": { "Might": 180, "Agility": 200, "Intellect": 800, "Willpower": 600, "Presence": 400, "Integration": 700 },
+      "RequiredTraits": ["singularity_core", "root_confirmed", "true_partnership"],
+      "RequiredItems": ["singularity_stabilizer", "archon_core", "admin_token_x1000", "void_aether"],
+      "CorpReputation": [80,70,60,80,70],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "anti_cheat_purge_1",
+      "Name": "Anti-Cheat Purge: Singularity Detection",
+      "Description": "The System detects anomaly. Purge protocol initiated. Prove you're a feature, not a bug.",
+      "Type": "AntiCheatPurge",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "System Admin Avatar", "PowerLevel": 100, "DamageTypes": ["Entropic", "Data", "Energy", "Kinetic", "Psychic"], "Mechanics": ["All"] },
+        { "Type": "Environmental", "Description": "Reality deletion wave", "PowerLevel": 90, "DamageTypes": ["Entropic"], "Mechanics": ["RealityEditing", "Evasion"] },
+        { "Type": "Internal", "Description": "Singularity instability", "PowerLevel": 85, "DamageTypes": ["Entropic", "Data"], "Mechanics": ["ResourceManagement", "Willpower"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "system_recognized", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 5000 },
+        { "Type": "Unlock", "Id": "Stage3_Satellite", "Amount": 1 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Character deleted. New Game+ with 'System Target' modifier.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The Admin pauses. Logs show: 'Anomaly reclassified: Asset.' The satellite uplink opens. You rise."
+  }
+]

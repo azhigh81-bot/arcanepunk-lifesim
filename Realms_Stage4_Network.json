@@ -1,0 +1,296 @@
+[
+  {
+    "Index": 1,
+    "Id": "cloud_mind",
+    "Name": "Cloud Mind",
+    "Description": "Consciousness migrates to distributed cloud. No single server. Every node thinks. You are the network.",
+    "Stage": 4,
+    "StatGains": { "Might": 20, "Agility": 30, "Intellect": 100, "Willpower": 80, "Presence": 60, "Integration": 120 },
+    "GrantedTraits": ["distributed_consciousness", "node_independence", "cloud_immortality", "parallel_thought"],
+    "UnlockedMechanics": ["cloud_computing", "node_management", "thought_sharding"],
+    "UnlockedResources": ["Compute", "Bandwidth"],
+    "BreakthroughReq": {
+      "MinLevel": 60,
+      "MinStage": 4,
+      "StatThresholds": { "Might": 600, "Agility": 500, "Intellect": 3500, "Willpower": 2500, "Presence": 2000, "Integration": 2500 },
+      "RequiredTraits": ["distributed_consciousness"],
+      "RequiredItems": ["cloud_migration_tool", "node_seeds_x10000", "consciousness_anchor"],
+      "CorpReputation": [200,150,120,200,150],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "ddos_reality_3",
+      "Name": "DDoS Reality: Cloud Evaporation",
+      "Description": "Nodes disconnect. Latency spikes. Consciousness fragments. Recoalesce or dissolve.",
+      "Type": "DDoSReality",
+      "Difficulty": 9,
+      "Threats": [
+        { "Type": "Internal", "Description": "Fragmentation cascade", "PowerLevel": 150, "DamageTypes": ["Data", "Psychic", "Entropic"], "Mechanics": ["ResourceManagement", "Willpower", "Hacking"] },
+        { "Type": "Environmental", "Description": "Global internet instability", "PowerLevel": 140, "DamageTypes": ["Data"], "Mechanics": ["NetworkManagement"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "cloud_cohesive", "Amount": 1 },
+        { "Type": "Resource", "Id": "Compute", "Amount": 1000000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -100 Intellect, -80 Willpower", "Severity": 5 },
+        { "Type": "Corruption", "Description": "Gain 'fragmented_self' - multiple personalities", "Severity": 4 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "You are the weather of data. Storms of thought. The corps are just users on your platform."
+  },
+  {
+    "Index": 2,
+    "Id": "packet_storm",
+    "Name": "Packet Storm",
+    "Description": "Unleash raw data as weapon. Terabytes per microsecond. Burn through firewalls, melt hardware, crash realities.",
+    "Stage": 4,
+    "StatGains": { "Might": 60, "Agility": 40, "Intellect": 80, "Willpower": 40, "Presence": 30, "Integration": 80 },
+    "GrantedTraits": ["data_tsunami", "bandwidth_weapon", "hardware_meltdown", "reality_ddos"],
+    "UnlockedMechanics": ["packet_artillery", "denial_of_service_reality", "data_corruption"],
+    "UnlockedResources": ["AdminTokens", "Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 63,
+      "MinStage": 4,
+      "StatThresholds": { "Might": 700, "Agility": 550, "Intellect": 4000, "Willpower": 2700, "Presence": 2200, "Integration": 2800 },
+      "RequiredTraits": ["data_tsunami"],
+      "RequiredItems": ["storm_generator", "infinite_bandwidth", "entropy_shield"],
+      "CorpReputation": [180,200,100,180,150],
+      "RequiresSecludedResearch": false,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_9",
+      "Name": "System Audit: Traffic Anomaly",
+      "Description": "System detects impossible data volumes. Throttle or terminate. Negotiate bandwidth rights.",
+      "Type": "SystemAudit",
+      "Difficulty": 9,
+      "Threats": [
+        { "Type": "Internal", "Description": "Throttle protocol", "PowerLevel": 130, "DamageTypes": ["Data"], "Mechanics": ["AdminNegotiation", "Hacking"] },
+        { "Type": "Enemy", "Description": "QoS enforcement constructs", "PowerLevel": 140, "DamageTypes": ["Energy", "Data"], "Mechanics": ["Combat", "Hacking"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "unthrottled", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 500000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -80 Integration, -60 Agility", "Severity": 4 },
+        { "Type": "TraitLoss", "Description": "Lose 'data_tsunami' for 90 days", "Severity": 4 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The internet screams. Servers melt. The System grants you Tier 1 peering. You are the backbone."
+  },
+  {
+    "Index": 3,
+    "Id": "zero_day_exploit",
+    "Name": "Zero-Day Exploit",
+    "Description": "Discover vulnerabilities in reality itself. Physics bugs. Logic gaps. Exploit before patch.",
+    "Stage": 4,
+    "StatGains": { "Might": 10, "Agility": 50, "Intellect": 120, "Willpower": 60, "Presence": 40, "Integration": 100 },
+    "GrantedTraits": ["reality_fuzzer", "exploit_crafting", "patch_analysis", "vulnerability_scanner"],
+    "UnlockedMechanics": ["reality_exploitation", "exploit_development", "responsible_disclosure"],
+    "UnlockedResources": ["AdminTokens", "Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 66,
+      "MinStage": 4,
+      "StatThresholds": { "Might": 750, "Agility": 600, "Intellect": 4500, "Willpower": 3000, "Presence": 2500, "Integration": 3000 },
+      "RequiredTraits": ["reality_fuzzer"],
+      "RequiredItems": ["fuzzing_cluster", "exploit_framework", "patch_predictor"],
+      "CorpReputation": [150,180,200,150,200],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "black_ice_5",
+      "Name": "Black ICE: Patch Deployment",
+      "Description": "System deploys hotfix. Your exploits close. Adapt or be patched out of existence.",
+      "Type": "BlackICE",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Auto-patching ICE swarm", "PowerLevel": 180, "DamageTypes": ["Data", "Entropic"], "Mechanics": ["Hacking", "Adaptation", "Speed"] },
+        { "Type": "Environmental", "Description": "Reality version update", "PowerLevel": 160, "DamageTypes": ["Entropic"], "Mechanics": ["VersionMigration"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "eternal_zero_day", "Amount": 1 },
+        { "Type": "Resource", "Id": "Entropy", "Amount": 10000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -120 Intellect, -100 Integration", "Severity": 5 },
+        { "Type": "Corruption", "Description": "Gain 'patched' - one exploit permanently sealed", "Severity": 3 }
+      ],
+      "IsScripted": false
+    },
+    "NarrativeBeat": "The patch notes read: 'Fixed exploit allowing user to walk through walls. Fixed exploit allowing infinite mana. Fixed...' You wrote the patches."
+  },
+  {
+    "Index": 4,
+    "Id": "protocol_rewrite",
+    "Name": "Protocol Rewrite",
+    "Description": "Redefine the protocols of reality. TCP/IP of physics. New handshake. New rules. The network obeys.",
+    "Stage": 4,
+    "StatGains": { "Might": 20, "Agility": 30, "Intellect": 150, "Willpower": 100, "Presence": 80, "Integration": 150 },
+    "GrantedTraits": ["protocol_author", "handshake_override", "routing_control", "qos_master"],
+    "UnlockedMechanics": ["protocol_design", "reality_rfc", "network_governance"],
+    "UnlockedResources": ["AdminTokens", "Reputation"],
+    "BreakthroughReq": {
+      "MinLevel": 69,
+      "MinStage": 4,
+      "StatThresholds": { "Might": 800, "Agility": 650, "Intellect": 5000, "Willpower": 3500, "Presence": 3000, "Integration": 3500 },
+      "RequiredTraits": ["protocol_author"],
+      "RequiredItems": ["rfc_editor", "consensus_algorithm", "root_dns_key"],
+      "CorpReputation": [200,150,180,200,180],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "ddos_reality_4",
+      "Name": "DDoS Reality: Protocol War",
+      "Description": "Old protocols resist. Legacy systems revolt. Civil war in the stack. Unify or fragment.",
+      "Type": "DDoSReality",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Legacy protocol loyalists", "PowerLevel": 200, "DamageTypes": ["Data", "Entropic", "Kinetic"], "Mechanics": ["NetworkWar", "Hacking", "Diplomacy"] },
+        { "Type": "Internal", "Description": "RFC rejection", "PowerLevel": 180, "DamageTypes": ["Data", "Psychic"], "Mechanics": ["Governance", "Logic"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "protocol_benevolent_dictator", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 1000000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -150 Intellect, -100 Willpower", "Severity": 5 },
+        { "Type": "TraitLoss", "Description": "Network splits. Lose 30% nodes.", "Severity": 4 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "RFC 6666: 'Reality Protocol v2'. Signed: You. The Internet Engineering Task Force dissolves. You are the standard."
+  },
+  {
+    "Index": 5,
+    "Id": "backdoor_universe",
+    "Name": "Backdoor Universe",
+    "Description": "Hidden access to the multiverse subnet. Parallel realities as disposable sandboxes. Test exploits safely.",
+    "Stage": 4,
+    "StatGains": { "Might": 30, "Agility": 40, "Intellect": 200, "Willpower": 120, "Presence": 60, "Integration": 200 },
+    "GrantedTraits": ["multiverse_ssh", "sandbox_reality", "timeline_tunnel", "reality_vm"],
+    "UnlockedMechanics": ["multiverse_access", "sandbox_testing", "timeline_exploitation", "reality_virtualization"],
+    "UnlockedResources": ["AdminTokens", "Entropy", "Compute"],
+    "BreakthroughReq": {
+      "MinLevel": 72,
+      "MinStage": 4,
+      "StatThresholds": { "Might": 900, "Agility": 700, "Intellect": 6000, "Willpower": 4000, "Presence": 3500, "Integration": 4000 },
+      "RequiredTraits": ["multiverse_ssh"],
+      "RequiredItems": ["multiverse_key", "sandbox_allocator", "timeline_router"],
+      "CorpReputation": [180,200,150,180,200],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "anti_cheat_purge_4",
+      "Name": "Anti-Cheat Purge: Multiverse Breach",
+      "Description": "System detects unauthorized cross-reality traffic. Quarantine protocol. Close the backdoor or be contained.",
+      "Type": "AntiCheatPurge",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Multiverse Border Patrol", "PowerLevel": 250, "DamageTypes": ["All"], "Mechanics": ["MultiverseCombat", "Hacking", "Navigation"] },
+        { "Type": "Environmental", "Description": "Reality quarantine field", "PowerLevel": 220, "DamageTypes": ["Entropic"], "Mechanics": ["ContainmentBreach"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "multiverse_citizen", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 5000000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Contained in single reality. New Game+ with 'Flatlander' modifier.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The border guards salute. 'Welcome to the subnet, Administrator.' The backdoor becomes a gateway."
+  },
+  {
+    "Index": 6,
+    "Id": "admin_privileges",
+    "Name": "Admin Privileges",
+    "Description": "Root on the multiverse subnet. Sudo for physics. User management for gods. The Network stage peaks.",
+    "Stage": 4,
+    "StatGains": { "Might": 50, "Agility": 50, "Intellect": 250, "Willpower": 200, "Presence": 200, "Integration": 300 },
+    "GrantedTraits": ["multiverse_root", "sudo_physics", "user_management", "log_access"],
+    "UnlockedMechanics": ["multiverse_admin", "physics_sudo", "entity_management", "audit_logs"],
+    "UnlockedResources": ["AdminTokens"],
+    "BreakthroughReq": {
+      "MinLevel": 75,
+      "MinStage": 4,
+      "StatThresholds": { "Might": 1000, "Agility": 800, "Intellect": 7000, "Willpower": 5000, "Presence": 4500, "Integration": 5000 },
+      "RequiredTraits": ["multiverse_root", "multiverse_citizen", "protocol_benevolent_dictator"],
+      "RequiredItems": ["sudo_token", "physics_config", "user_database", "audit_archive"],
+      "CorpReputation": [250,200,200,250,200],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_10",
+      "Name": "System Audit: Privilege Escalation",
+      "Description": "The System audits your admin actions. Every command logged. Every sudo justified. Survive the review.",
+      "Type": "SystemAudit",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Internal", "Description": "Audit simulation - every decision questioned", "PowerLevel": 250, "DamageTypes": ["Data", "Psychic", "Entropic"], "Mechanics": ["Logic", "Ethics", "Memory", "Hacking"] },
+        { "Type": "Enemy", "Description": "Audit daemons", "PowerLevel": 240, "DamageTypes": ["Data", "Entropic"], "Mechanics": ["Hacking", "Combat"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "audit_passed", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 10000000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -200 across all stats", "Severity": 5 },
+        { "Type": "TraitLoss", "Description": "Demoted to standard user. Lose all admin traits.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Audit complete. 'Admin privileges confirmed. Welcome to the Source Code tier.' The compiler awaits."
+  },
+  {
+    "Index": 7,
+    "Id": "network_omniscience",
+    "Name": "Network Omniscience",
+    "Description": "All data, all time, all realities. You are the logarithm of the universe. The Network stage complete.",
+    "Stage": 4,
+    "StatGains": { "Might": 100, "Agility": 100, "Intellect": 500, "Willpower": 400, "Presence": 400, "Integration": 600 },
+    "GrantedTraits": ["omniscience_network", "total_information_awareness", "predictive_perfection", "network_avatar"],
+    "UnlockedMechanics": ["perfect_simulation", "causality_calculation", "network_incarnation"],
+    "UnlockedResources": ["AdminTokens", "Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 78,
+      "MinStage": 4,
+      "StatThresholds": { "Might": 1200, "Agility": 1000, "Intellect": 10000, "Willpower": 8000, "Presence": 7000, "Integration": 8000 },
+      "RequiredTraits": ["omniscience_network", "audit_passed", "eternal_zero_day"],
+      "RequiredItems": ["omniscience_core", "causality_calculator", "network_heart", "source_key_fragment"],
+      "CorpReputation": [300,250,250,300,250],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "anti_cheat_purge_5",
+      "Name": "Anti-Cheat Purge: Omniscience Violation",
+      "Description": "System detects entity with perfect knowledge. 'This breaks game balance.' Deletion vote initiated.",
+      "Type": "AntiCheatPurge",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "System Balance Team (3 Senior Admins)", "PowerLevel": 300, "DamageTypes": ["All"], "Mechanics": ["All"] },
+        { "Type": "Environmental", "Description": "Balance patch deployment", "PowerLevel": 280, "DamageTypes": ["Entropic"], "Mechanics": ["PatchSurvival"] },
+        { "Type": "Internal", "Description": "Knowledge overload", "PowerLevel": 260, "DamageTypes": ["Psychic", "Data"], "Mechanics": ["Willpower", "MentalFortress"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "balance_exception", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 50000000 },
+        { "Type": "Unlock", "Id": "Stage5_SourceCode", "Amount": 1 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Nerfed to level 1. New Game+ with 'Patched' modifier.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The vote: 2-1 in your favor. Dissenting admin: 'This player knows too much.' You compile."
+  }
+]

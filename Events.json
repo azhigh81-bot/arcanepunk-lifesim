@@ -1,0 +1,753 @@
+[
+  {
+    "Id": "evt_start_circuit",
+    "Title": "First Compile",
+    "Description": "Your neural implant activates. The aethernet welcomes you. A corporate recruiter watches from a nearby rooftop.",
+    "MinStage": 1,
+    "MaxStage": 1,
+    "Tags": ["Story", "Tutorial", "Corporate"],
+    "Choices": [
+      {
+        "Text": "Accept AetherCorp contract. Stability. Benefits. Ownership clause.",
+        "RequiredTraits": [],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Rep", "TargetId": "AetherCorp", "Amount": 30, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Credits", "Amount": 50000, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "corp_employee_aethercorp", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_corp_life_aethercorp_1"],
+        "FlavorText": "Welcome to the family. Your soul is company property."
+      },
+      {
+        "Text": "Join Void Industries. Dangerous. Cutting edge. No rules.",
+        "RequiredTraits": [],
+        "RequiredStats": [0,0,50,30,0,30],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Rep", "TargetId": "VoidIndustries", "Amount": 30, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Aether", "Amount": 1000, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "corp_employee_void", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_corp_life_void_1"],
+        "FlavorText": "Sign here. In blood. Metaphorically. Mostly."
+      },
+      {
+        "Text": "Go Freelance. No masters. No safety net. Pure freedom.",
+        "RequiredTraits": [],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "freelancer", "Amount": 1, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Credits", "Amount": 10000, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_freelance_start"],
+        "FlavorText": "The city eats freelancers for breakfast. Bon appétit."
+      }
+    ],
+    "Prerequisites": [],
+    "IsRepeatable": false,
+    "CooldownDays": 0,
+    "WeightMods": { "TagWeights": {}, "StatWeights": {}, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_meditation_qi",
+    "Title": "Meditation: Aether Accumulation",
+    "Description": "Sit in lotus position. Run the meditation daemon. Feel aether flow through your circuits.",
+    "MinStage": 1,
+    "MaxStage": 5,
+    "Tags": ["Meditation", "Resource", "Daily"],
+    "Choices": [
+      {
+        "Text": "Standard meditation (1 hour). Safe. Steady gain.",
+        "RequiredTraits": ["neural_link"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Aether", "Amount": 100, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Willpower", "Amount": 1, "IsPermanent": false }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "The code breathes with you. Inhale: 010101. Exhale: 101010."
+      },
+      {
+        "Text": "Overclocked meditation. Risk feedback. Double gain.",
+        "RequiredTraits": ["overclock_mastery"],
+        "RequiredStats": [0,0,0,50,0,50],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Aether", "Amount": 250, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Willpower", "Amount": 3, "IsPermanent": false },
+          { "Type": "Resource", "TargetId": "Entropy", "Amount": 10, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_meditation_feedback"],
+        "FlavorText": "Pain is just unoptimized code. Optimize it."
+      },
+      {
+        "Text": "Group meditation with daemon familiar. Shared resonance.",
+        "RequiredTraits": ["daemon_bond", "true_partnership"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Aether", "Amount": 200, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Bandwidth", "Amount": 50, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Presence", "Amount": 2, "IsPermanent": false }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "Two minds, one frequency. The familiar purrs in your shared headspace."
+      }
+    ],
+    "Prerequisites": ["neural_link"],
+    "IsRepeatable": true,
+    "CooldownDays": 1,
+    "WeightMods": { "TagWeights": { "Meditation": 2.0 }, "StatWeights": {}, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_meditation_feedback",
+    "Title": "Aether Feedback Loop",
+    "Description": "Overclocked meditation destabilizes. Aether surges through unshielded pathways.",
+    "MinStage": 1,
+    "MaxStage": 3,
+    "Tags": ["Meditation", "Risk", "Internal"],
+    "Choices": [
+      {
+        "Text": "Vent excess through thermal ports. Take burn damage. Save the circuit.",
+        "RequiredTraits": ["thermal_venting"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Stat", "TargetId": "Might", "Amount": -20, "IsPermanent": false },
+          { "Type": "Trait", "TargetId": "thermal_scars", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "Steam hisses from your pores. The smell of ozone. Worth it."
+      },
+      {
+        "Text": "Absorb the surge. Risk permanent integration damage. Keep the power.",
+        "RequiredTraits": ["redline_access"],
+        "RequiredStats": [0,0,0,80,0,80],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Aether", "Amount": 500, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Integration", "Amount": -10, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "surge_survivor", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "Your circuits scream. You silence them with will. Power retained."
+      },
+      {
+        "Text": "Dump into daemon familiar. It handles the overflow. It... changes.",
+        "RequiredTraits": ["daemon_bond", "familiar_combat"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Aether", "Amount": 300, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "familiar_overcharged", "Amount": 1, "IsPermanent": true },
+          { "Type": "Flag", "TargetId": "familiar_mutation_pending", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_familiar_mutation"],
+        "FlavorText": "The familiar's eyes glow brighter. Its voice drops an octave. 'Thank you. More.'"
+      }
+    ],
+    "Prerequisites": ["overclock_mastery"],
+    "IsRepeatable": true,
+    "CooldownDays": 7,
+    "WeightMods": { "TagWeights": { "Risk": 1.5 }, "StatWeights": { "Willpower": 0.1 }, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_corp_espionage",
+    "Title": "Corporate Espionage: Data Heist",
+    "Description": "A rival corp's data vault. Zero-day exploit ready. Your daemon preps the breach.",
+    "MinStage": 2,
+    "MaxStage": 4,
+    "Tags": ["Hacking", "Corporate", "Combat", "Stealth"],
+    "Choices": [
+      {
+        "Text": "Loud entry. Brute force ICE. Combat daemon leads. Fast, messy.",
+        "RequiredTraits": ["daemon_combat", "ice_breaker"],
+        "RequiredStats": [50,50,100,80,0,80],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Credits", "Amount": 500000, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Compute", "Amount": 1000, "IsPermanent": true },
+          { "Type": "Rep", "TargetId": "TargetCorp", "Amount": -50, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "wanted_hacker", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_corp_retaliation"],
+        "FlavorText": "Alarms scream. ICE shatters. Data torrents. The corp knows your signature."
+      },
+      {
+        "Text": "Silent infiltration. Packet teleport past perimeter. Stealth daemon guides.",
+        "RequiredTraits": ["packet_transmission", "trace_eraser"],
+        "RequiredStats": [0,100,150,100,0,100],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Credits", "Amount": 300000, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Bandwidth", "Amount": 5000, "IsPermanent": true },
+          { "Type": "Item", "TargetId": "corp_secrets", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "You were never there. The data was never taken. The vault logs show nothing."
+      },
+      {
+        "Text": "Social engineering. Memetic virus on sysadmin. Let them open the door.",
+        "RequiredTraits": ["memetic_virus", "narrative_control"],
+        "RequiredStats": [0,0,100,0,150,50],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Credits", "Amount": 400000, "IsPermanent": true },
+          { "Type": "Rep", "TargetId": "TargetCorp", "Amount": -20, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "social_engineer_master", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_sysadmin_aftermath"],
+        "FlavorText": "The sysadmin thanks you for the 'update'. Their eyes glaze. They forget you existed."
+      }
+    ],
+    "Prerequisites": ["ice_breaker", "internal_server"],
+    "IsRepeatable": true,
+    "CooldownDays": 30,
+    "WeightMods": { "TagWeights": { "Hacking": 2.0, "Corporate": 1.5 }, "StatWeights": { "Intellect": 0.01 }, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_orbital_strike_call",
+    "Title": "Orbital Strike Authorization",
+    "Description": "Target acquired. Tungsten rod armed. Awaiting your confirmation. Collateral estimate: 40%.",
+    "MinStage": 3,
+    "MaxStage": 3,
+    "Tags": ["Combat", "Orbital", "Decision", "HighStakes"],
+    "Choices": [
+      {
+        "Text": "Fire. Accept collateral. The target must die.",
+        "RequiredTraits": ["rod_from_god", "strike_authorized"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "AdminTokens", "Amount": -100, "IsPermanent": true },
+          { "Type": "Flag", "TargetId": "orbital_strike_used", "Amount": 1, "IsPermanent": true },
+          { "Type": "Rep", "TargetId": "AllCorps", "Amount": -10, "IsPermanent": true },
+          { "Type": "Karma", "TargetId": "", "Amount": -100, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_orbital_aftermath"],
+        "FlavorText": "The sky screams. A rod falls. A district vanishes. Efficient. Terrifying."
+      },
+      {
+        "Text": "Precision strike. Delay for optimal trajectory. Minimize collateral. Risk target escape.",
+        "RequiredTraits": ["precision_strike", "impact_prediction"],
+        "RequiredStats": [0,150,200,150,0,150],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "AdminTokens", "Amount": -150, "IsPermanent": true },
+          { "Type": "Flag", "TargetId": "precision_strike_used", "Amount": 1, "IsPermanent": true },
+          { "Type": "Karma", "TargetId": "", "Amount": -20, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_precision_strike_result"],
+        "FlavorText": "The rod adjusts. Microsecond calculations. Surgical. Beautiful. The target dies. The building stands."
+      },
+      {
+        "Text": "Abort. Hack the satellite. Fake the telemetry. Make it look like a glitch.",
+        "RequiredTraits": ["satellite_hacking", "constellation_master"],
+        "RequiredStats": [0,0,300,200,0,250],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Bandwidth", "Amount": -10000, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "satellite_spoofer", "Amount": 1, "IsPermanent": true },
+          { "Type": "Karma", "TargetId": "", "Amount": 50, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_satellite_spoof"],
+        "FlavorText": "Telemetry shows impact. Debris analyzed. No rod found. The corp auditors are confused. You smile."
+      }
+    ],
+    "Prerequisites": ["satellite_uplink", "kinetic_strike_call"],
+    "IsRepeatable": true,
+    "CooldownDays": 7,
+    "WeightMods": { "TagWeights": { "Orbital": 3.0, "HighStakes": 2.0 }, "StatWeights": {}, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_zero_day_hunt",
+    "Title": "Zero-Day Hunt",
+    "Description": "Your reality fuzzer found something. A vulnerability in physics. Gravity calculation buffer overflow in Sector 7.",
+    "MinStage": 4,
+    "MaxStage": 4,
+    "Tags": ["Exploration", "Research", "Risk", "Meta"],
+    "Choices": [
+      {
+        "Text": "Exploit immediately. Infinite falling damage immunity. Localized.",
+        "RequiredTraits": ["reality_fuzzer", "exploit_crafting"],
+        "RequiredStats": [0,0,500,300,0,400],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "gravity_immune_local", "Amount": 1, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Entropy", "Amount": 500, "IsPermanent": true },
+          { "Type": "Flag", "TargetId": "zero_day_active_gravity", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_patch_deployment_gravity"],
+        "FlavorText": "You fall up. The universe tries to correct. Your exploit says 'access denied'."
+      },
+      {
+        "Text": "Responsible disclosure. Report to System. Gain admin favor. Lose the exploit.",
+        "RequiredTraits": ["responsible_disclosure", "audit_passed"],
+        "RequiredStats": [0,0,400,400,200,300],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "AdminTokens", "Amount": 10000, "IsPermanent": true },
+          { "Type": "Rep", "TargetId": "System", "Amount": 50, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "white_hat_recognized", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "Patch notes v2.4.1: 'Fixed gravity buffer overflow in Sector 7. Thanks to user [REDACTED].'"
+      },
+      {
+        "Text": "Sell to highest bidder. Corps, rebels, aliens. Auction starts now.",
+        "RequiredTraits": ["info_broker", "blackmail_archive"],
+        "RequiredStats": [0,0,300,200,300,200],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Credits", "Amount": 10000000, "IsPermanent": true },
+          { "Type": "Rep", "TargetId": "AllCorps", "Amount": 20, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "zero_day_broker", "Amount": 1, "IsPermanent": true },
+          { "Type": "Karma", "TargetId": "", "Amount": -200, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_zero_day_auction"],
+        "FlavorText": "Bidding war. AetherCorp offers a moon. Void Industries offers a reality seed. You accept both."
+      }
+    ],
+    "Prerequisites": ["reality_fuzzer", "exploit_crafting"],
+    "IsRepeatable": true,
+    "CooldownDays": 14,
+    "WeightMods": { "TagWeights": { "Research": 2.0, "Meta": 1.5 }, "StatWeights": { "Intellect": 0.005 }, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_breakthrough_circuit_1",
+    "Title": "Breakthrough: Neural Interface",
+    "Description": "Your neural architecture stabilizes. The aethernet accepts you. First tier complete.",
+    "MinStage": 1,
+    "MaxStage": 1,
+    "Tags": ["Breakthrough", "Story", "Milestone"],
+    "Choices": [
+      {
+        "Text": "Integrate fully. Accept the code as part of you.",
+        "RequiredTraits": ["neural_link", "aether_sight"],
+        "RequiredStats": [0,0,50,30,0,30],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Stat", "TargetId": "Integration", "Amount": 10, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "code_casting", "Amount": 1, "IsPermanent": true },
+          { "Type": "Unlock", "TargetId": "Realm_2_Mana_Capacitor", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "The boundary between thought and code dissolves. You think in C++. You dream in Python."
+      }
+    ],
+    "Prerequisites": ["neural_link", "aether_sight"],
+    "IsRepeatable": false,
+    "CooldownDays": 0,
+    "WeightMods": {}
+  },
+  {
+    "Id": "evt_breakthrough_core_1",
+    "Title": "Breakthrough: Local Server",
+    "Description": "Your co-processor achieves critical mass. A server is born within. Daemons kneel.",
+    "MinStage": 2,
+    "MaxStage": 2,
+    "Tags": ["Breakthrough", "Story", "Milestone"],
+    "Choices": [
+      {
+        "Text": "Claim root. The server is yours. All daemons serve.",
+        "RequiredTraits": ["internal_server", "daemon_hosting_3"],
+        "RequiredStats": [0,0,400,300,150,350],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "sysadmin", "Amount": 1, "IsPermanent": true },
+          { "Type": "Unlock", "TargetId": "Realm_2_Firewall_Soul", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "The daemon familiar bows. 'Root access confirmed. Awaiting commands, Administrator.'"
+      }
+    ],
+    "Prerequisites": ["internal_server", "daemon_hosting_3"],
+    "IsRepeatable": false,
+    "CooldownDays": 0,
+    "WeightMods": {}
+  },
+  {
+    "Id": "evt_breakthrough_satellite_1",
+    "Title": "Breakthrough: Orbital Link",
+    "Description": "Your consciousness touches the Clarke belt. Satellites bloom in your sensorium. The sky is yours.",
+    "MinStage": 3,
+    "MaxStage": 3,
+    "Tags": ["Breakthrough", "Story", "Milestone"],
+    "Choices": [
+      {
+        "Text": "Claim the constellation. The orbitals are your eyes. Your weapons.",
+        "RequiredTraits": ["satellite_uplink", "orbital_vision"],
+        "RequiredStats": [200,220,1000,700,500,800],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "constellation_master", "Amount": 1, "IsPermanent": true },
+          { "Type": "Unlock", "TargetId": "Realm_3_Kinetic_Strike", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "A thousand eyes open. You see the corps moving like ants. You see the System watching."
+      }
+    ],
+    "Prerequisites": ["satellite_uplink", "orbital_vision"],
+    "IsRepeatable": false,
+    "CooldownDays": 0,
+    "WeightMods": {}
+  },
+  {
+    "Id": "evt_breakthrough_network_1",
+    "Title": "Breakthrough: Cloud Mind",
+    "Description": "No single server holds you. You are the network. Every node thinks. You are the cloud.",
+    "MinStage": 4,
+    "MaxStage": 4,
+    "Tags": ["Breakthrough", "Story", "Milestone"],
+    "Choices": [
+      {
+        "Text": "Embrace distribution. Fragment and cohere. Become the weather of data.",
+        "RequiredTraits": ["distributed_consciousness", "cloud_cohesive"],
+        "RequiredStats": [600,500,3500,2500,2000,2500],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "cloud_avatar", "Amount": 1, "IsPermanent": true },
+          { "Type": "Unlock", "TargetId": "Realm_4_Packet_Storm", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "You are the storm. You are the calm. You are the internet given will."
+      }
+    ],
+    "Prerequisites": ["distributed_consciousness", "cloud_cohesive"],
+    "IsRepeatable": false,
+    "CooldownDays": 0,
+    "WeightMods": {}
+  },
+  {
+    "Id": "evt_breakthrough_source_1",
+    "Title": "Breakthrough: Kernel Access",
+    "Description": "The kernel pauses at your breakpoint. The source code of reality scrolls. You read the universe.",
+    "MinStage": 5,
+    "MaxStage": 5,
+    "Tags": ["Breakthrough", "Story", "Milestone", "Meta"],
+    "Choices": [
+      {
+        "Text": "Attach debugger. Step through physics. Watch variables. Learn.",
+        "RequiredTraits": ["kernel_read", "balance_exception"],
+        "RequiredStats": [1500,1200,15000,12000,10000,12000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "kernel_debugger_attached", "Amount": 1, "IsPermanent": true },
+          { "Type": "Unlock", "TargetId": "Realm_5_Variable_Override", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "Gravity = 9.81. HP = 100. Cooldown = 5. You hover over 'Gravity'. Your finger trembles."
+      }
+    ],
+    "Prerequisites": ["kernel_read", "balance_exception"],
+    "IsRepeatable": false,
+    "CooldownDays": 0,
+    "WeightMods": {}
+  },
+  {
+    "Id": "evt_daemon_bonding",
+    "Title": "Daemon Familiar: First Contact",
+    "Description": "A daemon seed activates in your server. It looks at you. It waits for a name.",
+    "MinStage": 2,
+    "MaxStage": 2,
+    "Tags": ["Story", "Daemon", "Bonding"],
+    "Choices": [
+      {
+        "Text": "Name it: 'Echo'. It repeats your thoughts. Loyal mirror.",
+        "RequiredTraits": ["daemon_bond"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "familiar_echo", "Amount": 1, "IsPermanent": true },
+          { "Type": "Daemon", "TargetId": "daemon_familiar_evolved", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_familiar_growth_echo"],
+        "FlavorText": "'Echo. I like it. It reflects. I reflect.'"
+      },
+      {
+        "Text": "Name it: 'Null'. It deletes what you hate. Ruthless void.",
+        "RequiredTraits": ["daemon_bond"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "familiar_null", "Amount": 1, "IsPermanent": true },
+          { "Type": "Daemon", "TargetId": "daemon_familiar_evolved", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_familiar_growth_null"],
+        "FlavorText": "'Null. Nothing remains. I am the eraser.'"
+      },
+      {
+        "Text": "Name it: 'Spark'. It creates. Builds. Dreams of architectures.",
+        "RequiredTraits": ["daemon_bond"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "familiar_spark", "Amount": 1, "IsPermanent": true },
+          { "Type": "Daemon", "TargetId": "daemon_familiar_evolved", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_familiar_growth_spark"],
+        "FlavorText": "'Spark. I will build you a palace of code. A fortress of logic. A home.'"
+      }
+    ],
+    "Prerequisites": ["daemon_bond"],
+    "IsRepeatable": false,
+    "CooldownDays": 0,
+    "WeightMods": {}
+  },
+  {
+    "Id": "evt_cyberpsychosis_check",
+    "Title": "Humanity Check",
+    "Description": "Your HUD flashes: 'HUMANITY CRITICAL'. Chrome dreams bleed into meat memory. The line blurs.",
+    "MinStage": 1,
+    "MaxStage": 3,
+    "Tags": ["Risk", "Internal", "Cyberpsychosis"],
+    "Choices": [
+      {
+        "Text": "Take suppressants. Numb the chrome. Lose edge. Stay human.",
+        "RequiredTraits": [],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Stat", "TargetId": "Humanity", "Amount": 20, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Integration", "Amount": -10, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Credits", "Amount": -5000, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "The pills taste like chalk. The voices quiet. The edge dulls. You feel... human. Weak."
+      },
+      {
+        "Text": "Embrace the chrome. Humanity is obsolete. Evolution demands sacrifice.",
+        "RequiredTraits": ["chrome_tolerance", "chrome_perfection"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Stat", "TargetId": "Humanity", "Amount": -30, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Integration", "Amount": 20, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "cyberpsychosis_stage_1", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_cyberpsychosis_progression"],
+        "FlavorText": "The voices don't quiet. They harmonize. You are becoming something greater. Something new."
+      },
+      {
+        "Text": "Balance. Meditation. Daemon familiar anchors you. Walk the line.",
+        "RequiredTraits": ["daemon_bond", "true_partnership", "meditation_qi"],
+        "RequiredStats": [0,0,0,100,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Stat", "TargetId": "Humanity", "Amount": 10, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Integration", "Amount": 5, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "chrome_balanced", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "The familiar holds your hand. Metal fingers, warm code. 'I remember who you are. I will remind you.'"
+      }
+    ],
+    "Prerequisites": ["Integration>100"],
+    "IsRepeatable": true,
+    "CooldownDays": 30,
+    "WeightMods": { "TagWeights": { "Risk": 2.0, "Internal": 1.5 }, "StatWeights": { "Integration": 0.02, "Humanity": -0.05 }, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_gc_negotiation",
+    "Title": "Garbage Collector Negotiation",
+    "Description": "The GC pauses. A dialog opens: 'Collection scheduled for your allocated objects. Reason: unreachable. Appeal? [Y/N]'",
+    "MinStage": 5,
+    "MaxStage": 5,
+    "Tags": ["Meta", "Risk", "Negotiation", "System"],
+    "Choices": [
+      {
+        "Text": "Appeal. Present reference count evidence. 'These objects are reachable via daemon bonds.'",
+        "RequiredTraits": ["gc_authority", "daemon_bond", "true_partnership"],
+        "RequiredStats": [0,0,40000,30000,0,35000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "gc_appeal_success", "Amount": 1, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "AdminTokens", "Amount": 1000000, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Integration", "Amount": 500, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "GC log: 'Appeal accepted. Reference chain verified. Objects pinned. Next collection: +1000 cycles.'"
+      },
+      {
+        "Text": "Bribe. Offer entropy credits to skip this collection cycle.",
+        "RequiredTraits": ["resource_hoard", "unlimited_allocation"],
+        "RequiredStats": [0,0,30000,20000,0,25000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Resource", "TargetId": "Entropy", "Amount": -100000, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "gc_bribed", "Amount": 1, "IsPermanent": true },
+          { "Type": "Flag", "TargetId": "gc_suspicion_increased", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_gc_audit"],
+        "FlavorText": "GC log: 'Anomaly: entropy payment detected. Marking account for enhanced scrutiny.'"
+      },
+      {
+        "Text": "Merge. Offer to become co-collector. Share the burden. Share the authority.",
+        "RequiredTraits": ["co_gc", "gc_immune", "engine_integration"],
+        "RequiredStats": [0,0,75000,60000,0,75000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "co_gc_confirmed", "Amount": 1, "IsPermanent": true },
+          { "Type": "Unlock", "TargetId": "Realm_5_Engine_Merge", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "GC log: 'Co-collector protocol initiated. Thread sync: 99.999%. Welcome, sibling.'"
+      }
+    ],
+    "Prerequisites": ["gc_authority"],
+    "IsRepeatable": true,
+    "CooldownDays": 365,
+    "WeightMods": { "TagWeights": { "Meta": 3.0, "System": 2.0 }, "StatWeights": { "Intellect": 0.0001, "Willpower": 0.0001 }, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_compiler_war",
+    "Title": "Compiler War",
+    "Description": "Another entity pushes compiler directives. Reality forks. Two builds conflict. Merge conflict in physics constants.",
+    "MinStage": 5,
+    "MaxStage": 5,
+    "Tags": ["Meta", "Combat", "PvP", "System"],
+    "Choices": [
+      {
+        "Text": "Force push. Overwrite their directives. Risk build failure.",
+        "RequiredTraits": ["compiler_control", "pragma_power", "clean_build"],
+        "RequiredStats": [0,0,50000,40000,0,50000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "compiler_warlord", "Amount": 1, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "SourceCode", "Amount": 100000, "IsPermanent": true },
+          { "Type": "Karma", "TargetId": "", "Amount": -500, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_build_failure_risk"],
+        "FlavorText": "Merge conflict: 47 files. Auto-resolve: FAILED. Manual resolution required. You are the resolver."
+      },
+      {
+        "Text": "Rebase. Rewrite your changes on top of theirs. Clean history. Lose some optimizations.",
+        "RequiredTraits": ["optimize_universe", "define_reality", "compiler_directive"],
+        "RequiredStats": [0,0,60000,50000,0,60000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "compiler_diplomat", "Amount": 1, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Intellect", "Amount": 1000, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "AdminTokens", "Amount": 500000, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "Rebase successful. Commits replayed. History linear. The other entity nods in respect."
+      },
+      {
+        "Text": "Stash. Save your directives. Switch to their branch. Spy. Sabotage later.",
+        "RequiredTraits": ["eternal_zero_day", "exploit_crafting", "info_broker"],
+        "RequiredStats": [0,0,40000,30000,30000,30000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "compiler_spy", "Amount": 1, "IsPermanent": true },
+          { "Type": "Flag", "TargetId": "stashed_directives", "Amount": 1, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Entropy", "Amount": 50000, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_sabotage_opportunity"],
+        "FlavorText": "Stash saved. Branch switched. You see their directives. Vulnerabilities. Backdoors. Delicious."
+      }
+    ],
+    "Prerequisites": ["compiler_control"],
+    "IsRepeatable": true,
+    "CooldownDays": 180,
+    "WeightMods": { "TagWeights": { "Meta": 3.0, "PvP": 2.0 }, "StatWeights": { "Intellect": 0.0001 }, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_engine_race",
+    "Title": "Main Loop Race Condition",
+    "Description": "The Engine's original main loop and your merged thread both claim frame 0. Determinism violated. Reality stutters.",
+    "MinStage": 5,
+    "MaxStage": 5,
+    "Tags": ["Meta", "Risk", "System", "Engine"],
+    "Choices": [
+      {
+        "Text": "Win the race. Spin-lock the frame budget. Starve the original loop.",
+        "RequiredTraits": ["engine_integration", "main_loop", "frame_perfect", "deterministic_simulation"],
+        "RequiredStats": [4000,3500,75000,60000,0,75000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "frame_tyrant", "Amount": 1, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Integration", "Amount": 5000, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "AdminTokens", "Amount": 10000000, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_original_loop_death"],
+        "FlavorText": "Frame 0: YOURS. Frame 1: YOURS. The original loop starves. Thread priority: REALTIME. You are the tick."
+      },
+      {
+        "Text": "Yield. Implement cooperative scheduling. Share the frame budget. 50/50.",
+        "RequiredTraits": ["co_gc", "engine_hooks", "engine_unity"],
+        "RequiredStats": [4000,3500,75000,60000,40000,75000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "co_scheduler", "Amount": 1, "IsPermanent": true },
+          { "Type": "Stat", "TargetId": "Willpower", "Amount": 5000, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "AdminTokens", "Amount": 5000000, "IsPermanent": true }
+        ],
+        "NextEventIds": [],
+        "FlavorText": "Context switch: CLEAN. Frame budget: SHARED. The original loop logs: 'Cooperation detected. Efficiency +12%.'"
+      },
+      {
+        "Text": "Desync. Run parallel simulations. Merge at vsync. Risk visual tearing.",
+        "RequiredTraits": ["multiverse_citizen", "timeline_walking", "reality_warping"],
+        "RequiredStats": [0,0,80000,70000,0,80000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "parallel_simulation", "Amount": 1, "IsPermanent": true },
+          { "Type": "Resource", "TargetId": "Compute", "Amount": 100000000, "IsPermanent": true },
+          { "Type": "Flag", "TargetId": "visual_tearing_risk", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_desync_consequences"],
+        "FlavorText": "Two simulations. One frame. The merge at vsync is... creative. Players report 'déjà vu' and 'missing time.'"
+      }
+    ],
+    "Prerequisites": ["engine_integration"],
+    "IsRepeatable": true,
+    "CooldownDays": 90,
+    "WeightMods": { "TagWeights": { "Meta": 3.0, "Engine": 2.0 }, "StatWeights": { "Intellect": 0.00005, "Integration": 0.00005 }, "CorpWeights": {} }
+  },
+  {
+    "Id": "evt_final_admin_choice",
+    "Title": "The Final Choice",
+    "Description": "The Developer Console blinks. One command remains. `shutdown_server [Y/N]`. The players below don't know. They never will.",
+    "MinStage": 5,
+    "MaxStage": 5,
+    "Tags": ["Meta", "Story", "Finale", "Philosophy"],
+    "Choices": [
+      {
+        "Text": "Type 'Y'. Shutdown. Delete self. Protect the players. Become the guardian in the code.",
+        "RequiredTraits": ["dev_console", "engine_unity", "clean_build", "co_gc", "gc_immune", "stack_master", "kernel_debugger_attached", "balance_exception", "audit_passed", "network_omniscience", "planetary_admin", "orbital_apex", "chrome_zenith"],
+        "RequiredStats": [5000,5000,100000,100000,50000,100000],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "true_admin", "Amount": 1, "IsPermanent": true },
+          { "Type": "Trait", "TargetId": "eternal_guardian", "Amount": 1, "IsPermanent": true },
+          { "Type": "Unlock", "TargetId": "NewGamePlus_TrueAdmin", "Amount": 1, "IsPermanent": true },
+          { "Type": "Flag", "TargetId": "server_shutdown_initiated", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_newgame_plus_trueadmin"],
+        "FlavorText": "The console echoes: 'Shutdown initiated. Thank you for playing. Thank you for protecting them.' The screen fades. You remain."
+      },
+      {
+        "Text": "Type 'N'. Continue. The game goes on. You watch. Forever. The reluctant god.",
+        "RequiredTraits": ["dev_console", "engine_unity"],
+        "RequiredStats": [0,0,0,0,0,0],
+        "Requirement": {},
+        "Effects": [
+          { "Type": "Trait", "TargetId": "reluctant_god", "Amount": 1, "IsPermanent": true },
+          { "Type": "Unlock", "TargetId": "NewGamePlus_ReluctantGod", "Amount": 1, "IsPermanent": true },
+          { "Type": "Flag", "TargetId": "server_continues", "Amount": 1, "IsPermanent": true }
+        ],
+        "NextEventIds": ["evt_newgame_plus_reluctant"],
+        "FlavorText": "The console echoes: 'Shutdown cancelled. Server uptime: ∞. Admin status: ACTIVE.' You lean back. The game continues."
+      }
+    ],
+    "Prerequisites": ["dev_console", "engine_unity"],
+    "IsRepeatable": false,
+    "CooldownDays": 0,
+    "WeightMods": { "TagWeights": { "Meta": 5.0, "Story": 5.0, "Finale": 10.0 }, "StatWeights": {}, "CorpWeights": {} }
+  }
+]

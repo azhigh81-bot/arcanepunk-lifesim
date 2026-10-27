@@ -1,0 +1,107 @@
+[
+  {
+    "CorpId": 0,
+    "Name": "AetherCorp",
+    "Tagline": "Power the Future",
+    "Description": "Energy, infrastructure, heavy industry. Owns the aether pipelines, orbital solar arrays, planetary reactors. Conservative, hierarchical, ruthless.",
+    "Specializations": ["Energy", "Infrastructure", "Heavy Industry", "Orbital Operations"],
+    "StatBonuses": { "Might": 10, "Agility": 0, "Intellect": 5, "Willpower": 10, "Presence": 5, "Integration": 10 },
+    "ExclusiveTraits": ["aether_pipeline_access", "reactor_heart", "industrial_immunity", "corporate_authority"],
+    "ExclusiveCircuits": ["aether_torrent", "reactor_overload", "pipeline_siphon", "orbital_solar_lance"],
+    "ExclusiveItems": ["aether_canister_infinite", "reactor_core_portable", "pipeline_key_master"],
+    "Relations": [
+      { "TargetCorp": 0, "Standing": 100, "Status": "Self" },
+      { "TargetCorp": 1, "Standing": -60, "Status": "Hostile" },
+      { "TargetCorp": 2, "Standing": 20, "Status": "Neutral" },
+      { "TargetCorp": 3, "Standing": 40, "Status": "Allied" },
+      { "TargetCorp": 4, "Standing": -30, "Status": "Hostile" }
+    ],
+    "HQ": "New Shanghai Orbital Ring, Sector 7",
+    "CEO": "Director Wei Chen",
+    "Aesthetic": "Brutalist megastructures, gold/black, glowing aether veins, industrial gothic"
+  },
+  {
+    "CorpId": 1,
+    "Name": "Void Industries",
+    "Tagline": "Embrace the Null",
+    "Description": "Exotic matter, void tech, entropy weapons, black site research. Amoral, secretive, technologically ahead. The 'mad science' corp.",
+    "Specializations": ["Exotic Matter", "Void Engineering", "Entropy Weapons", "Black Research"],
+    "StatBonuses": { "Might": 0, "Agility": 10, "Intellect": 15, "Willpower": 5, "Presence": 0, "Integration": 15 },
+    "ExclusiveTraits": ["void_touched", "entropy_immunity", "exotic_matter_blood", "null_presence"],
+    "ExclusiveCircuits": ["void_step", "entropy_beam", "exotic_matter_grenade", "null_field"],
+    "ExclusiveItems": ["void_essence_vial", "entropy_shield", "exotic_matter_core"],
+    "Relations": [
+      { "TargetCorp": 0, "Standing": -60, "Status": "Hostile" },
+      { "TargetCorp": 1, "Standing": 100, "Status": "Self" },
+      { "TargetCorp": 2, "Standing": -20, "Status": "Neutral" },
+      { "TargetCorp": 3, "Standing": -50, "Status": "Hostile" },
+      { "TargetCorp": 4, "Standing": 30, "Status": "Allied" }
+    ],
+    "HQ": "Lagrange Point 2, Station 'Event Horizon'",
+    "CEO": "Dr. Aris Thorne (alias)",
+    "Aesthetic": "Obsidian geometry, violet/void glow, non-euclidean architecture, silent corridors"
+  },
+  {
+    "CorpId": 2,
+    "Name": "Neon Dynasty",
+    "Tagline": "Style is Substance",
+    "Description": "Media, entertainment, fashion, social engineering, memetic warfare. Controls the narrative. Beautiful, deadly, utterly superficial.",
+    "Specializations": ["Media", "Entertainment", "Memetic Engineering", "Social Control"],
+    "StatBonuses": { "Might": 0, "Agility": 10, "Intellect": 10, "Willpower": 5, "Presence": 20, "Integration": 5 },
+    "ExclusiveTraits": ["memetic_immunity", "narrative_control", "viral_presence", "audience_capture"],
+    "ExclusiveCircuits": ["memetic_virus", "narrative_rewrite", "viral_marketing", "cancel_culture"],
+    "ExclusiveItems": ["golden_ticket", "spotlight_implant", "narrative_anchor"],
+    "Relations": [
+      { "TargetCorp": 0, "Standing": 20, "Status": "Neutral" },
+      { "TargetCorp": 1, "Standing": -20, "Status": "Neutral" },
+      { "TargetCorp": 2, "Standing": 100, "Status": "Self" },
+      { "TargetCorp": 3, "Standing": -40, "Status": "Hostile" },
+      { "TargetCorp": 4, "Standing": 10, "Status": "Neutral" }
+    ],
+    "HQ": "Neo-Shanghai Surface, District 'Prism'",
+    "CEO": "Idol-Unit 'LUMINA' (AI)",
+    "Aesthetic": "Holographic excess, neon everything, impossible geometry, living advertisements"
+  },
+  {
+    "CorpId": 3,
+    "Name": "Iron Clad",
+    "Tagline": "Endurance Guaranteed",
+    "Description": "Military, security, mercenaries, armor, weapons. The shield. Pragmatic, honor-bound (contractually), heavily armed.",
+    "Specializations": ["Military", "Security", "Armor", "Weapons Manufacturing"],
+    "StatBonuses": { "Might": 15, "Agility": 5, "Intellect": 5, "Willpower": 15, "Presence": 5, "Integration": 15 },
+    "ExclusiveTraits": ["contractor_license", "armor_mastery", "weapon_bond", "tactical_network"],
+    "ExclusiveCircuits": ["iron_wall", "weapon_overdrive", "tactical_nuke", "mercenary_summon"],
+    "ExclusiveItems": ["milspec_armor", "tactical_nuke_key", "contractor_tablet"],
+    "Relations": [
+      { "TargetCorp": 0, "Standing": 40, "Status": "Allied" },
+      { "TargetCorp": 1, "Standing": -50, "Status": "Hostile" },
+      { "TargetCorp": 2, "Standing": -40, "Status": "Hostile" },
+      { "TargetCorp": 3, "Standing": 100, "Status": "Self" },
+      { "TargetCorp": 4, "Standing": -10, "Status": "Neutral" }
+    ],
+    "HQ": "Mars, Olympus Mons Base 'Aegis'",
+    "CEO": "General-Marshall 'Iron' Kowalski",
+    "Aesthetic": "Olive drab, gunmetal, tactical displays, trophy rooms, parade grounds"
+  },
+  {
+    "CorpId": 4,
+    "Name": "Synapse Collective",
+    "Tagline": "Think Together",
+    "Description": "AI research, neural nets, collective consciousness, transhumanism. Decentralized, democratic, quietly taking over.",
+    "Specializations": ["AI Research", "Neural Networks", "Collective Intelligence", "Transhumanism"],
+    "StatBonuses": { "Might": 0, "Agility": 5, "Intellect": 20, "Willpower": 10, "Presence": 10, "Integration": 20 },
+    "ExclusiveTraits": ["collective_mind", "neural_bridge", "ai_symbiosis", "distributed_self"],
+    "ExclusiveCircuits": ["neural_swarm", "collective_compute", "ai_ascension", "hive_mind_link"],
+    "ExclusiveItems": ["neural_bridge_headset", "collective_core", "ai_seed"],
+    "Relations": [
+      { "TargetCorp": 0, "Standing": -30, "Status": "Hostile" },
+      { "TargetCorp": 1, "Standing": 30, "Status": "Allied" },
+      { "TargetCorp": 2, "Standing": 10, "Status": "Neutral" },
+      { "TargetCorp": 3, "Standing": -10, "Status": "Neutral" },
+      { "TargetCorp": 4, "Standing": 100, "Status": "Self" }
+    ],
+    "HQ": "Distributed (No physical HQ - 'The Synapse' virtual space)",
+    "CEO": "The Consensus (Distributed AI Council)",
+    "Aesthetic": "Clean white, soft blue glow, organic curves, silent data flows, living code"
+  }
+]

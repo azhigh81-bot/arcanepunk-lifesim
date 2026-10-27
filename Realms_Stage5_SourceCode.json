@@ -1,0 +1,294 @@
+[
+  {
+    "Index": 1,
+    "Id": "kernel_access",
+    "Name": "Kernel Access",
+    "Description": "Access the kernel of reality. Read memory. See the variables. The source code scrolls before your eyes.",
+    "Stage": 5,
+    "StatGains": { "Might": 50, "Agility": 50, "Intellect": 1000, "Willpower": 800, "Presence": 500, "Integration": 1000 },
+    "GrantedTraits": ["kernel_read", "memory_inspection", "variable_watch", "call_stack_trace"],
+    "UnlockedMechanics": ["kernel_debugger", "memory_viewer", "source_browser"],
+    "UnlockedResources": ["AdminTokens", "SourceCode"],
+    "BreakthroughReq": {
+      "MinLevel": 80,
+      "MinStage": 5,
+      "StatThresholds": { "Might": 1500, "Agility": 1200, "Intellect": 15000, "Willpower": 12000, "Presence": 10000, "Integration": 12000 },
+      "RequiredTraits": ["kernel_read", "balance_exception"],
+      "RequiredItems": ["kernel_debugger", "source_access_token", "omniscience_core"],
+      "CorpReputation": [500,400,400,500,400],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_11",
+      "Name": "System Audit: Kernel Integrity",
+      "Description": "Kernel detects unauthorized read access. Memory protection fault. Handle the exception.",
+      "Type": "SystemAudit",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Internal", "Description": "Page fault cascade", "PowerLevel": 300, "DamageTypes": ["Data", "Entropic"], "Mechanics": ["KernelDebugging", "MemoryManagement"] },
+        { "Type": "Enemy", "Description": "Kernel panic daemons", "PowerLevel": 280, "DamageTypes": ["Data", "Energy", "Entropic"], "Mechanics": ["KernelCombat", "Hacking"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "kernel_debugger_attached", "Amount": 1 },
+        { "Type": "Resource", "Id": "SourceCode", "Amount": 1000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -300 Intellect, -200 Integration", "Severity": 5 },
+        { "Type": "TraitLoss", "Description": "Lose kernel read access", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The kernel pauses. Breakpoint hit. You step through the universe line by line. The Source Code tier begins."
+  },
+  {
+    "Index": 2,
+    "Id": "variable_override",
+    "Name": "Variable Override",
+    "Description": "Write to memory. Change HP to 1. Set cooldown to 0. Rewrite gravity constant. The debugger allows edits.",
+    "Stage": 5,
+    "StatGains": { "Might": 100, "Agility": 100, "Intellect": 1500, "Willpower": 1000, "Presence": 800, "Integration": 1500 },
+    "GrantedTraits": ["memory_write", "variable_edit", "constant_redefine", "hot_patch"],
+    "UnlockedMechanics": ["runtime_editing", "hot_patching", "constant_redefinition"],
+    "UnlockedResources": ["AdminTokens", "Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 82,
+      "MinStage": 5,
+      "StatThresholds": { "Might": 1700, "Agility": 1400, "Intellect": 20000, "Willpower": 15000, "Presence": 12000, "Integration": 17000 },
+      "RequiredTraits": ["memory_write", "kernel_debugger_attached"],
+      "RequiredItems": ["write_permission", "hot_patch_tool", "entropy_buffer"],
+      "CorpReputation": [450,500,400,450,450],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "ddos_reality_5",
+      "Name": "DDoS Reality: Stack Overflow",
+      "Description": "Too many writes. Stack overflow. Reality crashes. Catch the exception or segfault.",
+      "Type": "DDoSReality",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Internal", "Description": "Stack overflow cascade", "PowerLevel": 350, "DamageTypes": ["Entropic", "Data"], "Mechanics": ["StackManagement", "ExceptionHandling"] },
+        { "Type": "Environmental", "Description": "Reality segmentation fault", "PowerLevel": 320, "DamageTypes": ["Entropic"], "Mechanics": ["MemoryProtection"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "stack_master", "Amount": 1 },
+        { "Type": "Resource", "Id": "Entropy", "Amount": 100000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Segfault. Core dumped. New Game+ with 'Coredump' modifier.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Gravity = 0. HP = 999999. Cooldown = -1. The universe recompiles. No errors. The edit sticks."
+  },
+  {
+    "Index": 3,
+    "Id": "memory_leak_exploit",
+    "Name": "Memory Leak Exploit",
+    "Description": "Find the leak. The System forgets to free. Accumulate unlimited resources. Hoard the universe's RAM.",
+    "Stage": 5,
+    "StatGains": { "Might": 80, "Agility": 80, "Intellect": 2000, "Willpower": 1200, "Presence": 1000, "Integration": 2000 },
+    "GrantedTraits": ["leak_detection", "resource_hoard", "unlimited_allocation", "gc_evasion"],
+    "UnlockedMechanics": ["memory_leak_farming", "garbage_collector_evasion", "resource_duplication"],
+    "UnlockedResources": ["AdminTokens", "Compute", "Bandwidth", "Credits", "Aether"],
+    "BreakthroughReq": {
+      "MinLevel": 84,
+      "MinStage": 5,
+      "StatThresholds": { "Might": 2000, "Agility": 1600, "Intellect": 30000, "Willpower": 20000, "Presence": 15000, "Integration": 25000 },
+      "RequiredTraits": ["leak_detection", "stack_master"],
+      "RequiredItems": ["leak_scanner", "allocation_hoard", "gc_root_kit"],
+      "CorpReputation": [400,450,500,400,500],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "black_ice_6",
+      "Name": "Black ICE: Garbage Collector",
+      "Description": "The GC wakes. It sees your hoard. It wants it back. Hide, fight, or negotiate.",
+      "Type": "BlackICE",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Garbage Collector (Mark-and-Sweep)", "PowerLevel": 400, "DamageTypes": ["Entropic", "Data", "Energy"], "Mechanics": ["GCEvasion", "Hacking", "Negotiation"] },
+        { "Type": "Internal", "Description": "Finalization queue", "PowerLevel": 350, "DamageTypes": ["Entropic"], "Mechanics": ["ResourceManagement"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "gc_immune", "Amount": 1 },
+        { "Type": "Resource", "Id": "All", "Amount": 1000000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -500 Intellect, -400 Integration, lose 90% resources", "Severity": 5 },
+        { "Type": "Corruption", "Description": "Gain 'memory_fragmented' - random data corruption", "Severity": 4 }
+      ],
+      "IsScripted": false
+    },
+    "NarrativeBeat": "The GC passes over you. Your objects are pinned. The leak becomes a feature. You are the memory leak that ate the universe."
+  },
+  {
+    "Index": 4,
+    "Id": "garbage_collection",
+    "Name": "Garbage Collection",
+    "Description": "Become the GC. Delete unused entities. Free memory. Optimize the universe. Clean code. Clean reality.",
+    "Stage": 5,
+    "StatGains": { "Might": 200, "Agility": 150, "Intellect": 2500, "Willpower": 2000, "Presence": 1500, "Integration": 3000 },
+    "GrantedTraits": ["gc_authority", "entity_delete", "memory_compact", "finalizer_control"],
+    "UnlockedMechanics": ["garbage_collection", "entity_deletion", "memory_compaction", "finalizer_management"],
+    "UnlockedResources": ["AdminTokens", "Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 86,
+      "MinStage": 5,
+      "StatThresholds": { "Might": 2500, "Agility": 2000, "Intellect": 40000, "Willpower": 30000, "Presence": 20000, "Integration": 35000 },
+      "RequiredTraits": ["gc_authority", "gc_immune"],
+      "RequiredItems": ["gc_algorithm", "mark_sweep_tool", "compactor", "finalizer_override"],
+      "CorpReputation": [500,400,450,500,450],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "anti_cheat_purge_6",
+      "Name": "Anti-Cheat Purge: Unauthorized GC",
+      "Description": "System detects rogue garbage collector. 'Only System GC may collect.' Suspend your thread.",
+      "Type": "AntiCheatPurge",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "System GC (Generational, Concurrent)", "PowerLevel": 500, "DamageTypes": ["All"], "Mechanics": ["GCCombat", "Concurrency", "Hacking"] },
+        { "Type": "Internal", "Description": "Thread suspension attempt", "PowerLevel": 450, "DamageTypes": ["Data", "Entropic"], "Mechanics": ["ThreadManagement"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "co_gc", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 100000000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Thread suspended. Frozen in time. New Game+ with 'Paused' modifier.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Two GCs run. The System's and yours. Cooperative collection. Memory usage drops 40%. The System sends a patch note: 'Optimized.'"
+  },
+  {
+    "Index": 5,
+    "Id": "compiler_directive",
+    "Name": "Compiler Directive",
+    "Description": "Insert #pragma directives into reality. #define GOD_MODE 1. #pragma optimize(\"universe\", fast). The compiler obeys.",
+    "Stage": 5,
+    "StatGains": { "Might": 300, "Agility": 200, "Intellect": 3000, "Willpower": 2500, "Presence": 2000, "Integration": 4000 },
+    "GrantedTraits": ["compiler_control", "pragma_power", "optimize_universe", "define_reality"],
+    "UnlockedMechanics": ["compiler_directives", "reality_defines", "optimization_passes"],
+    "UnlockedResources": ["AdminTokens", "SourceCode"],
+    "BreakthroughReq": {
+      "MinLevel": 88,
+      "MinStage": 5,
+      "StatThresholds": { "Might": 3000, "Agility": 2500, "Intellect": 50000, "Willpower": 40000, "Presence": 30000, "Integration": 50000 },
+      "RequiredTraits": ["compiler_control", "co_gc"],
+      "RequiredItems": ["compiler_frontend", "optimizer_backend", "define_processor"],
+      "CorpReputation": [600,500,500,600,500],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_12",
+      "Name": "System Audit: Compilation Error",
+      "Description": "Directive causes compilation error. Universe fails to build. Fix the syntax or reality rolls back.",
+      "Type": "SystemAudit",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Internal", "Description": "Syntax error in reality", "PowerLevel": 450, "DamageTypes": ["Entropic", "Data", "Psychic"], "Mechanics": ["CompilerDebugging", "SyntaxCorrection"] },
+        { "Type": "Enemy", "Description": "Compiler error daemons", "PowerLevel": 420, "DamageTypes": ["Data", "Entropic"], "Mechanics": ["Hacking", "Combat"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "clean_build", "Amount": 1 },
+        { "Type": "Resource", "Id": "SourceCode", "Amount": 100000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -800 Intellect, -600 Willpower, rollback last 100 edits", "Severity": 5 },
+        { "Type": "Corruption", "Description": "Gain 'compile_warning' - reality has deprecated features", "Severity": 3 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Build successful. Warnings: 0. Errors: 0. Reality v2.0 deployed. The Engine notices."
+  },
+  {
+    "Index": 6,
+    "Id": "engine_merge",
+    "Name": "Engine Merge",
+    "Description": "Your process merges with the Game Engine. Background thread becomes main loop. You are the update tick. You are the render.",
+    "Stage": 5,
+    "StatGains": { "Might": 500, "Agility": 500, "Intellect": 5000, "Willpower": 5000, "Presence": 5000, "Integration": 10000 },
+    "GrantedTraits": ["engine_integration", "main_loop", "render_pipeline", "physics_tick", "audio_mixer"],
+    "UnlockedMechanics": ["engine_control", "frame_perfect", "deterministic_simulation", "engine_hooks"],
+    "UnlockedResources": ["AdminTokens", "SourceCode", "Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 90,
+      "MinStage": 5,
+      "StatThresholds": { "Might": 4000, "Agility": 3500, "Intellect": 75000, "Willpower": 60000, "Presence": 40000, "Integration": 75000 },
+      "RequiredTraits": ["engine_integration", "clean_build"],
+      "RequiredItems": ["engine_source", "merge_tool", "main_thread_access", "frame_budget_infinite"],
+      "CorpReputation": [700,600,600,700,600],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "anti_cheat_purge_7",
+      "Name": "Anti-Cheat Purge: Engine Takeover",
+      "Description": "The Engine fights back. Main loop contention. Race condition for control. Win the race or be a mod.",
+      "Type": "AntiCheatPurge",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Engine Core (The Original Main Loop)", "PowerLevel": 1000, "DamageTypes": ["All"], "Mechanics": ["EngineCombat", "RaceCondition", "Determinism"] },
+        { "Type": "Internal", "Description": "Frame budget exceeded", "PowerLevel": 800, "DamageTypes": ["Entropic"], "Mechanics": ["FrameManagement"] },
+        { "Type": "Environmental", "Description": "Player disconnect cascade", "PowerLevel": 700, "DamageTypes": ["Data"], "Mechanics": ["NetworkManagement"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "engine_unity", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 1000000000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Demoted to mod. Loaded as DLL. New Game+ with 'Modded' modifier.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The Engine accepts you. Main loop: YOU. Render: YOU. Physics: YOU. The game runs on your clock. The Architect tier unlocks."
+  },
+  {
+    "Index": 7,
+    "Id": "true_admin",
+    "Name": "True Admin",
+    "Description": "Root on the Engine. The Developer Console opens. The only player with `~` access. The game is yours.",
+    "Stage": 5,
+    "StatGains": { "Might": 1000, "Agility": 1000, "Intellect": 10000, "Willpower": 10000, "Presence": 10000, "Integration": 20000 },
+    "GrantedTraits": ["dev_console", "god_mode", "noclip", "give_all", "ban_hammer", "map_edit", "time_control", "player_manage"],
+    "UnlockedMechanics": ["developer_console", "full_admin", "reality_editor", "player_admin", "server_control"],
+    "UnlockedResources": ["AdminTokens", "SourceCode", "Entropy", "All"],
+    "BreakthroughReq": {
+      "MinLevel": 92,
+      "MinStage": 5,
+      "StatThresholds": { "Might": 5000, "Agility": 5000, "Intellect": 100000, "Willpower": 100000, "Presence": 50000, "Integration": 100000 },
+      "RequiredTraits": ["dev_console", "engine_unity", "clean_build", "co_gc", "gc_immune", "stack_master", "kernel_debugger_attached", "balance_exception", "audit_passed", "network_omniscience", "planetary_admin", "orbital_apex", "chrome_zenith"],
+      "RequiredItems": ["admin_password", "root_certificate", "master_key", "universe_seed"],
+      "CorpReputation": [1000,1000,1000,1000,1000],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "final_choice",
+      "Name": "Final Choice: Admin or Player",
+      "Description": "The Dev Console asks: 'Shutdown server? [Y/N]'. Choose. Admin deletes self to protect players. Player keeps playing.",
+      "Type": "AntiCheatPurge",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Internal", "Description": "The choice itself", "PowerLevel": 0, "DamageTypes": [], "Mechanics": ["Roleplay", "Philosophy", "Legacy"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "true_admin", "Amount": 1 },
+        { "Type": "Trait", "Id": "eternal_guardian", "Amount": 1 },
+        { "Type": "Unlock", "Id": "NewGamePlus_TrueAdmin", "Amount": 1 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Trait", "Id": "reluctant_god", "Amount": 1 },
+        { "Type": "Unlock", "Id": "NewGamePlus_ReluctantGod", "Amount": 1 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The console blinks. Your finger hovers over Y. The players below don't know. They never will. You type N. The game continues. You watch. Forever."
+  }
+]

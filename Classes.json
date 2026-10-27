@@ -1,0 +1,110 @@
+[
+  {
+    "ClassType": 0,
+    "Name": "Techno-Mage",
+    "Description": "Weaves spells through code. Circuits are grimoires. Aether is mana. The compiler is the arcane focus.",
+    "BaseStats": { "Might": 5, "Agility": 10, "Intellect": 25, "Willpower": 20, "Presence": 15, "Integration": 15 },
+    "GrowthPerLevel": { "Might": 0.5, "Agility": 1, "Intellect": 3, "Willpower": 2, "Presence": 1.5, "Integration": 2 },
+    "StartingTraits": ["neural_link", "code_casting", "aether_sight", "circuit_crafting_basic"],
+    "StartingSpellCircuits": ["magic_missile_script", "shield_daemon", "detect_magic_scanner"],
+    "PreferredCorps": [0, 4],
+    "Subclasses": [
+      {
+        "Id": "architect",
+        "Name": "Architect",
+        "Description": "Builds reality. Spawns structures, rewrites terrain, compiles matter from aether. The builder class.",
+        "GrantedTraits": ["structure_spawn", "terrain_compile", "matter_printer", "blueprint_master"],
+        "ExclusiveCircuits": ["instant_fortress", "wall_of_code", "bridge_daemon", "tower_compile"],
+        "BonusStats": { "Might": 10, "Agility": 0, "Intellect": 20, "Willpower": 15, "Presence": 10, "Integration": 20 }
+      },
+      {
+        "Id": "evoker",
+        "Name": "Evoker",
+        "Description": "Pure destruction. Optimized damage circuits. Overclocked aether. The artillery class.",
+        "GrantedTraits": ["circuit_overclock_native", "damage_optimization", "aether_burn", "critical_compile"],
+        "ExclusiveCircuits": ["meteor_swarm_script", "disintegrate_daemon", "chain_lightning_worm", "fireball_payload"],
+        "BonusStats": { "Might": 5, "Agility": 10, "Intellect": 25, "Willpower": 10, "Presence": 5, "Integration": 15 }
+      },
+      {
+        "Id": "technomancer",
+        "Name": "Technomancer",
+        "Description": "Controls machines. Hacks cybernetics. Commands daemons. The controller class.",
+        "GrantedTraits": ["machine_speech", "daemon_command", "cybernetic_hack", "synth_empathy"],
+        "ExclusiveCircuits": ["dominate_construct", "reprogram_daemon", "cybernetic_shutdown", "mech_possession"],
+        "BonusStats": { "Might": 0, "Agility": 15, "Intellect": 20, "Willpower": 20, "Presence": 15, "Integration": 20 }
+      }
+    ]
+  },
+  {
+    "ClassType": 1,
+    "Name": "Street Samurai",
+    "Description": "Chrome and code. Reflexes compiled. Weapons integrated. The body is the weapon. The street is the IDE.",
+    "BaseStats": { "Might": 25, "Agility": 20, "Intellect": 10, "Willpower": 15, "Presence": 10, "Integration": 20 },
+    "GrowthPerLevel": { "Might": 2.5, "Agility": 2, "Intellect": 1, "Willpower": 1.5, "Presence": 1, "Integration": 2 },
+    "StartingTraits": ["neural_interface", "combat_reflexes", "weapon_link", "chrome_tolerance"],
+    "StartingSpellCircuits": ["targeting_assist", "reflex_booster", "pain_editor"],
+    "PreferredCorps": [2, 3],
+    "Subclasses": [
+      {
+        "Id": "solo",
+        "Name": "Solo",
+        "Description": "Lone wolf. Maximum chrome. Maximum lethality. The striker class.",
+        "GrantedTraits": ["solo_operational", "lone_wolf_bonus", "chrome_maximization", "combat_drugs_immune"],
+        "ExclusiveCircuits": ["berserker_protocol", "sandevistan", "kerenzikov", "monowire_daemon"],
+        "BonusStats": { "Might": 30, "Agility": 20, "Intellect": 5, "Willpower": 10, "Presence": 0, "Integration": 25 }
+      },
+      {
+        "Id": "bodyguard",
+        "Name": "Bodyguard",
+        "Description": "Protect the principal. Tank damage. Intercept threats. The defender class.",
+        "GrantedTraits": ["intercept", "damage_sharing", "threat_analysis", "principal_link"],
+        "ExclusiveCircuits": ["shield_wall_daemon", "damage_redirect", "threat_nullifier", "principal_teleport"],
+        "BonusStats": { "Might": 20, "Agility": 10, "Intellect": 10, "Willpower": 20, "Presence": 20, "Integration": 20 }
+      },
+      {
+        "Id": "infiltrator",
+        "Name": "Infiltrator",
+        "Description": "Ghost in the chrome. Stealth, sabotage, silent kills. The rogue class.",
+        "GrantedTraits": ["optical_camo", "sound_dampening", "trace_eraser", "silent_kill"],
+        "ExclusiveCircuits": ["ghost_protocol", "silence_daemon", "backdoor_entry", "memory_wipe"],
+        "BonusStats": { "Might": 15, "Agility": 25, "Intellect": 15, "Willpower": 10, "Presence": 10, "Integration": 15 }
+      }
+    ]
+  },
+  {
+    "ClassType": 2,
+    "Name": "Netrunner",
+    "Description": "Pure code. Body atrophied, mind expanded. The net is the world. Ice is the enemy. Daemons are the army.",
+    "BaseStats": { "Might": 0, "Agility": 15, "Intellect": 30, "Willpower": 20, "Presence": 10, "Integration": 25 },
+    "GrowthPerLevel": { "Might": 0.2, "Agility": 1.5, "Intellect": 3.5, "Willpower": 2, "Presence": 1.5, "Integration": 2.5 },
+    "StartingTraits": ["neural_link", "ice_breaker", "daemon_hosting", "bandwidth_mastery"],
+    "StartingSpellCircuits": ["ice_pick", "daemon_spawn", "data_mine", "trace_route"],
+    "PreferredCorps": [1, 4],
+    "Subclasses": [
+      {
+        "Id": "black_hat",
+        "Name": "Black Hat",
+        "Description": "Offensive netrunner. Steal, destroy, ransom. The hacker class.",
+        "GrantedTraits": ["black_ice_native", "data_theft", "ransomware_craft", "zero_day_hunter"],
+        "ExclusiveCircuits": ["black_ice_breaker", "data_siphon", "ransomware_daemon", "zero_day_exploit"],
+        "BonusStats": { "Might": 0, "Agility": 10, "Intellect": 30, "Willpower": 15, "Presence": 5, "Integration": 25 }
+      },
+      {
+        "Id": "white_hat",
+        "Name": "White Hat",
+        "Description": "Defensive netrunner. Protect, audit, secure. The guardian class.",
+        "GrantedTraits": ["firewall_master", "intrusion_detection", "patch_deployment", "security_audit"],
+        "ExclusiveCircuits": ["firewall_daemon", "intrusion_alert", "auto_patch", "honeypot_deploy"],
+        "BonusStats": { "Might": 5, "Agility": 10, "Intellect": 25, "Willpower": 25, "Presence": 10, "Integration": 20 }
+      },
+      {
+        "Id": "grey_hat",
+        "Name": "Grey Hat",
+        "Description": "Information broker. Know everything. Sell to highest bidder. The spy class.",
+        "GrantedTraits": ["info_broker", "surveillance_master", "blackmail_archive", "neutral_access"],
+        "ExclusiveCircuits": ["omniscient_scanner", "secret_extractor", "dead_drop", "identity_laundry"],
+        "BonusStats": { "Might": 0, "Agility": 15, "Intellect": 25, "Willpower": 20, "Presence": 20, "Integration": 20 }
+      }
+    ]
+  }
+]

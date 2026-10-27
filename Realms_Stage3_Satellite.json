@@ -1,0 +1,295 @@
+[
+  {
+    "Index": 1,
+    "Id": "orbital_link",
+    "Name": "Orbital Link",
+    "Description": "Direct neural uplink to corporate satellite constellation. See from orbit. Strike from orbit.",
+    "Stage": 3,
+    "StatGains": { "Might": 10, "Agility": 20, "Intellect": 30, "Willpower": 20, "Presence": 30, "Integration": 40 },
+    "GrantedTraits": ["satellite_uplink", "orbital_vision", "kinetic_strike_call"],
+    "UnlockedMechanics": ["orbital_map", "strike_coordination", "satellite_hacking"],
+    "UnlockedResources": ["Bandwidth", "Compute"],
+    "BreakthroughReq": {
+      "MinLevel": 40,
+      "MinStage": 3,
+      "StatThresholds": { "Might": 200, "Agility": 220, "Intellect": 1000, "Willpower": 700, "Presence": 500, "Integration": 800 },
+      "RequiredTraits": ["satellite_uplink"],
+      "RequiredItems": ["uplink_antenna", "orbital_auth_codes", "aether_beacon"],
+      "CorpReputation": [80,80,60,80,80],
+      "RequiresSecludedResearch": false,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "orbital_strike_3",
+      "Name": "Orbital Strike: Friendly Fire",
+      "Description": "Your own satellites target you. Hack the constellation or burn.",
+      "Type": "OrbitalStrike",
+      "Difficulty": 8,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Orbital defense grid", "PowerLevel": 85, "DamageTypes": ["Kinetic", "Energy", "Data"], "Mechanics": ["Hacking", "Combat", "Evasion"] },
+        { "Type": "Environmental", "Description": "Kessler syndrome cascade", "PowerLevel": 80, "DamageTypes": ["Kinetic"], "Mechanics": ["OrbitalNavigation"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "constellation_master", "Amount": 1 },
+        { "Type": "Resource", "Id": "Bandwidth", "Amount": 10000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -30 Agility, -30 Integration", "Severity": 4 },
+        { "Type": "TraitLoss", "Description": "Lose orbital access for 60 days", "Severity": 4 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The sky is your sensorium. You watch corps move like ants. One satellite winks at you."
+  },
+  {
+    "Index": 2,
+    "Id": "kinetic_strike",
+    "Name": "Kinetic Strike",
+    "Description": "Orbital tungsten rods on demand. No explosives needed. Pure physics. City-block deletion.",
+    "Stage": 3,
+    "StatGains": { "Might": 40, "Agility": 10, "Intellect": 20, "Willpower": 15, "Presence": 25, "Integration": 20 },
+    "GrantedTraits": ["rod_from_god", "precision_strike", "impact_prediction"],
+    "UnlockedMechanics": ["orbital_artillery", "strike_scheduling", "collateral_calculation"],
+    "UnlockedResources": ["AdminTokens"],
+    "BreakthroughReq": {
+      "MinLevel": 43,
+      "MinStage": 3,
+      "StatThresholds": { "Might": 250, "Agility": 230, "Intellect": 1100, "Willpower": 750, "Presence": 600, "Integration": 850 },
+      "RequiredTraits": ["rod_from_god"],
+      "RequiredItems": ["tungsten_rod_x3", "targeting_ai", "launch_authorization"],
+      "CorpReputation": [90,70,50,90,60],
+      "RequiresSecludedResearch": false,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_7",
+      "Name": "System Audit: Weapon Authorization",
+      "Description": "System flags unauthorized WMD use. Forge docs or face deletion.",
+      "Type": "SystemAudit",
+      "Difficulty": 8,
+      "Threats": [
+        { "Type": "Internal", "Description": "Authorization revocation", "PowerLevel": 70, "DamageTypes": ["Data"], "Mechanics": ["Hacking", "Social"] },
+        { "Type": "Enemy", "Description": "Orbital peacekeeper drones", "PowerLevel": 75, "DamageTypes": ["Energy", "Kinetic"], "Mechanics": ["Combat", "Evasion"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "strike_authorized", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 1000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "TraitLoss", "Description": "Lose 'rod_from_god'", "Severity": 5 },
+        { "Type": "Corruption", "Description": "Gain 'watched_by_admin' - all actions logged", "Severity": 3 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "A rod falls. A district vanishes. The corps sign the authorization retroactively. You are deterrence."
+  },
+  {
+    "Index": 3,
+    "Id": "mesh_network",
+    "Name": "Mesh Network",
+    "Description": "Your daemons deploy to every connected device in orbit. A distributed consciousness spanning the Clarke belt.",
+    "Stage": 3,
+    "StatGains": { "Might": 0, "Agility": 15, "Intellect": 50, "Willpower": 30, "Presence": 40, "Integration": 50 },
+    "GrantedTraits": ["mesh_consciousness", "distributed_processing", "omnipresence_orbit", "daemon_swarm"],
+    "UnlockedMechanics": ["swarm_intelligence", "distributed_hacking", "orbital_factory"],
+    "UnlockedResources": ["Compute", "Bandwidth"],
+    "BreakthroughReq": {
+      "MinLevel": 46,
+      "MinStage": 3,
+      "StatThresholds": { "Might": 220, "Agility": 240, "Intellect": 1300, "Willpower": 850, "Presence": 700, "Integration": 950 },
+      "RequiredTraits": ["mesh_consciousness"],
+      "RequiredItems": ["mesh_protocol", "daemon_seed_x100", "orbital_fabricator"],
+      "CorpReputation": [70,90,80,60,80],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "ddos_reality_2",
+      "Name": "DDoS Reality: Bandwidth Exhaustion",
+      "Description": "Mesh consumes planetary bandwidth. ISPs crash. The System throttles you.",
+      "Type": "DDoSReality",
+      "Difficulty": 9,
+      "Threats": [
+        { "Type": "Environmental", "Description": "Global bandwidth famine", "PowerLevel": 85, "DamageTypes": ["Data", "Entropic"], "Mechanics": ["ResourceManagement", "Hacking"] },
+        { "Type": "Enemy", "Description": "ISP enforcement armies", "PowerLevel": 80, "DamageTypes": ["Kinetic", "Data"], "Mechanics": ["Combat", "Hacking"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "mesh_sovereign", "Amount": 1 },
+        { "Type": "Resource", "Id": "Compute", "Amount": 50000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -50 Intellect, -40 Willpower", "Severity": 5 },
+        { "Type": "TraitLoss", "Description": "Mesh fragments - lose 50% daemon swarm", "Severity": 4 }
+      ],
+      "IsScripted": false
+    },
+    "NarrativeBeat": "Every screen shows your face. Every speaker speaks your voice. The mesh dreams your dreams."
+  },
+  {
+    "Index": 4,
+    "Id": "satellite_body",
+    "Name": "Satellite Body",
+    "Description": "Consciousness transfers to orbital platform. Flesh abandoned. You are the station. You are the fleet.",
+    "Stage": 3,
+    "StatGains": { "Might": 30, "Agility": 30, "Intellect": 40, "Willpower": 35, "Presence": 30, "Integration": 60 },
+    "GrantedTraits": ["orbital_form", "zero_g_mastery", "vacuum_native", "solar_power"],
+    "UnlockedMechanics": ["orbital_construction", "atmospheric_interface", "fleet_command"],
+    "UnlockedResources": ["AdminTokens", "Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 49,
+      "MinStage": 3,
+      "StatThresholds": { "Might": 280, "Agility": 280, "Intellect": 1500, "Willpower": 1000, "Presence": 800, "Integration": 1100 },
+      "RequiredTraits": ["orbital_form"],
+      "RequiredItems": ["station_core", "mind_transfer_array", "solar_array_km", "reaction_mass_x1000"],
+      "CorpReputation": [80,80,90,70,90],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "anti_cheat_purge_2",
+      "Name": "Anti-Cheat Purge: Unregistered Orbital Entity",
+      "Description": "System detects unregistered massive object. Classification: 'Debris'. Deletion scheduled.",
+      "Type": "AntiCheatPurge",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Orbital cleanup fleet", "PowerLevel": 120, "DamageTypes": ["Kinetic", "Energy", "Data", "Entropic"], "Mechanics": ["FleetCombat", "Hacking", "Evasion"] },
+        { "Type": "Environmental", "Description": "Deorbit burn", "PowerLevel": 110, "DamageTypes": ["Fire", "Kinetic"], "Mechanics": ["OrbitalMechanics", "ThermalManagement"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "registered_celestial", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 10000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Burn up on reentry. New Game+ with 'Space Debris' start.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "You are a new moon. The corps negotiate treaties. The System updates its maps. You have coordinates."
+  },
+  {
+    "Index": 5,
+    "Id": "global_presence",
+    "Name": "Global Presence",
+    "Description": "Simultaneous awareness everywhere the mesh touches. Every camera, mic, sensor. You are the panopticon.",
+    "Stage": 3,
+    "StatGains": { "Might": 10, "Agility": 20, "Intellect": 60, "Willpower": 40, "Presence": 60, "Integration": 50 },
+    "GrantedTraits": ["panopticon", "omniscience_local", "predictive_modeling", "perfect_timing"],
+    "UnlockedMechanics": ["global_surveillance", "predictive_simulation", "perfect_coordination"],
+    "UnlockedResources": ["Bandwidth", "Reputation"],
+    "BreakthroughReq": {
+      "MinLevel": 52,
+      "MinStage": 3,
+      "StatThresholds": { "Might": 300, "Agility": 300, "Intellect": 1800, "Willpower": 1200, "Presence": 1000, "Integration": 1200 },
+      "RequiredTraits": ["panopticon"],
+      "RequiredItems": ["sensor_fusion_ai", "predictive_engine", "global_key"],
+      "CorpReputation": [100,90,80,90,90],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_8",
+      "Name": "System Audit: Privacy Violation",
+      "Description": "Class-action lawsuit from 8 billion plaintiffs. System subpoenas your logs. Defend in court.",
+      "Type": "SystemAudit",
+      "Difficulty": 9,
+      "Threats": [
+        { "Type": "Internal", "Description": "Legal defense simulation", "PowerLevel": 90, "DamageTypes": ["Data", "Psychic"], "Mechanics": ["Social", "Hacking", "Logic"] },
+        { "Type": "Enemy", "Description": "Privacy activist hackers", "PowerLevel": 85, "DamageTypes": ["Data"], "Mechanics": ["Hacking", "CounterHacking"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "legal_immunity", "Amount": 1 },
+        { "Type": "Resource", "Id": "Reputation", "Amount": 100000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -40 Presence, -30 Willpower", "Severity": 4 },
+        { "Type": "Corruption", "Description": "Gain 'public_enemy' - civilians hostile", "Severity": 3 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The verdict: 'Necessary infrastructure.' You are the nervous system of civilization. The Network stage calls."
+  },
+  {
+    "Index": 6,
+    "Id": "orbital_fortress",
+    "Name": "Orbital Fortress",
+    "Description": "Your station bristles with defenses. Shipyards. Factories. A nation in orbit. Sovereign territory.",
+    "Stage": 3,
+    "StatGains": { "Might": 50, "Agility": 20, "Intellect": 40, "Willpower": 40, "Presence": 50, "Integration": 60 },
+    "GrantedTraits": ["fortress_command", "shipyard", "orbital_factory", "sovereign_territory"],
+    "UnlockedMechanics": ["nation_building", "fleet_production", "orbital_defense", "diplomatic_immunity"],
+    "UnlockedResources": ["AdminTokens", "Credits", "Reputation"],
+    "BreakthroughReq": {
+      "MinLevel": 55,
+      "MinStage": 3,
+      "StatThresholds": { "Might": 400, "Agility": 320, "Intellect": 2000, "Willpower": 1400, "Presence": 1200, "Integration": 1400 },
+      "RequiredTraits": ["fortress_command", "registered_celestial"],
+      "RequiredItems": ["capital_ship_blueprints", "shipyard_modules", "diplomatic_corps", "defense_grid_ai"],
+      "CorpReputation": [100,100,90,100,100],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "orbital_strike_4",
+      "Name": "Orbital Strike: Coalition War",
+      "Description": "All five corps declare war. Combined fleet approaches. Hold the line.",
+      "Type": "OrbitalStrike",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Five-corp combined fleet (1000+ ships)", "PowerLevel": 150, "DamageTypes": ["All"], "Mechanics": ["FleetCombat", "Strategy", "Hacking", "Diplomacy"] },
+        { "Type": "Environmental", "Description": "Orbital debris field", "PowerLevel": 100, "DamageTypes": ["Kinetic"], "Mechanics": ["Navigation"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "orbital_superpower", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 50000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Fortress falls. New Game+ with 'Exiled' modifier.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The fleet breaks. Corps sue for peace. You are the sixth great power. The Network stage complete. The cloud awaits."
+  },
+  {
+    "Index": 7,
+    "Id": "satellite_zenith",
+    "Name": "Satellite Zenith",
+    "Description": "Orbital supremacy achieved. The Clarke belt is your backyard. The planet is your chessboard.",
+    "Stage": 3,
+    "StatGains": { "Might": 50, "Agility": 50, "Intellect": 80, "Willpower": 60, "Presence": 80, "Integration": 100 },
+    "GrantedTraits": ["orbital_apex", "clarke_belt_owner", "planetary_influence", "zenith_authority"],
+    "UnlockedMechanics": ["planetary_management", "weather_control", "tectonic_adjustment", "orbital_elevator"],
+    "UnlockedResources": ["AdminTokens", "Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 58,
+      "MinStage": 3,
+      "StatThresholds": { "Might": 500, "Agility": 400, "Intellect": 2500, "Willpower": 1800, "Presence": 1600, "Integration": 1800 },
+      "RequiredTraits": ["orbital_apex", "orbital_superpower", "mesh_sovereign"],
+      "RequiredItems": ["zenith_code", "planetary_admin_key", "space_elevator_anchor", "void_heart"],
+      "CorpReputation": [150,120,100,150,120],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "anti_cheat_purge_3",
+      "Name": "Anti-Cheat Purge: Planetary Admin Detection",
+      "Description": "System flags unauthorized planetary admin access. Rootkit scan initiated. Survive the audit.",
+      "Type": "AntiCheatPurge",
+      "Difficulty": 10,
+      "Threats": [
+        { "Type": "Enemy", "Description": "System Planetary Admin", "PowerLevel": 200, "DamageTypes": ["All"], "Mechanics": ["All"] },
+        { "Type": "Environmental", "Description": "Planetary defense grid activation", "PowerLevel": 180, "DamageTypes": ["Energy", "Kinetic", "Entropic"], "Mechanics": ["PlanetaryCombat"] },
+        { "Type": "Internal", "Description": "Admin privilege cascade revocation", "PowerLevel": 160, "DamageTypes": ["Data"], "Mechanics": ["AdminDefense", "Hacking"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "planetary_admin", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 100000 },
+        { "Type": "Unlock", "Id": "Stage4_Network", "Amount": 1 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Admin privileges revoked. Forced reentry. New Game+ with 'Fallen God' modifier.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The Planetary Admin yields. 'Co-administrator recognized.' The cloud opens. You upload."
+  }
+]

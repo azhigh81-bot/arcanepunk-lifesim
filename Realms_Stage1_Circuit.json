@@ -1,0 +1,292 @@
+[
+  {
+    "Index": 1,
+    "Id": "neural_interface",
+    "Name": "Neural Interface",
+    "Description": "Basic cybernetic implant allowing direct mental connection to the Aethernet. First step to casting spells through code.",
+    "Stage": 1,
+    "StatGains": { "Might": 0, "Agility": 2, "Intellect": 10, "Willpower": 5, "Presence": 0, "Integration": 10 },
+    "GrantedTraits": ["neural_link", "aether_sight", "code_casting"],
+    "UnlockedMechanics": ["meditation_qi", "circuit_crafting_basic"],
+    "UnlockedResources": ["Credits", "Aether"],
+    "BreakthroughReq": {
+      "MinLevel": 1,
+      "MinStage": 1,
+      "StatThresholds": { "Might": 0, "Agility": 0, "Intellect": 50, "Willpower": 30, "Presence": 0, "Integration": 30 },
+      "RequiredTraits": ["neural_link"],
+      "RequiredItems": ["basic_neural_implant", "aether_cell_x3"],
+      "CorpReputation": [0,0,0,0,0],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": false
+    },
+    "Tribulation": {
+      "Id": "system_audit_1",
+      "Name": "System Audit: Integrity Check",
+      "Description": "The Aethernet scans your neural architecture. Survive the purge or be formatted.",
+      "Type": "SystemAudit",
+      "Difficulty": 2,
+      "Threats": [
+        { "Type": "Internal", "Description": "Memory corruption cascade", "PowerLevel": 10, "DamageTypes": ["Data", "Psychic"], "Mechanics": ["Timing", "ResourceManagement"] },
+        { "Type": "Environmental", "Description": "Firewall pressure spikes", "PowerLevel": 8, "DamageTypes": ["Energy"], "Mechanics": ["Hacking"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "audit_survivor", "Amount": 1 },
+        { "Type": "Resource", "Id": "Aether", "Amount": 500 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -5 Intellect, -5 Integration", "Severity": 2 },
+        { "Type": "Debt", "Description": "Owe 10,000 Credits to corp for recovery", "Severity": 1 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "First taste of power. The code flows through you. A corporation recruiter watches from the shadows."
+  },
+  {
+    "Index": 2,
+    "Id": "mana_capacitor",
+    "Name": "Mana Capacitor",
+    "Description": "Internal aether reservoir. Store spell energy, release on demand. No more waiting for cooldowns.",
+    "Stage": 1,
+    "StatGains": { "Might": 0, "Agility": 0, "Intellect": 5, "Willpower": 10, "Presence": 0, "Integration": 15 },
+    "GrantedTraits": ["aether_reservoir", "instant_cast_1", "overcharge"],
+    "UnlockedMechanics": ["aether_management", "circuit_overclock"],
+    "UnlockedResources": ["Bandwidth"],
+    "BreakthroughReq": {
+      "MinLevel": 3,
+      "MinStage": 1,
+      "StatThresholds": { "Might": 0, "Agility": 0, "Intellect": 80, "Willpower": 60, "Presence": 0, "Integration": 60 },
+      "RequiredTraits": ["aether_reservoir"],
+      "RequiredItems": ["capacitor_core", "purified_aether_x5", "cooling_gel_x3"],
+      "CorpReputation": [0,0,0,0,0],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": false
+    },
+    "Tribulation": {
+      "Id": "system_audit_2",
+      "Name": "System Audit: Power Surge",
+      "Description": "Your capacitor destabilizes. Contain the explosion or burn out.",
+      "Type": "SystemAudit",
+      "Difficulty": 3,
+      "Threats": [
+        { "Type": "Internal", "Description": "Aether feedback loop", "PowerLevel": 15, "DamageTypes": ["Energy", "Data"], "Mechanics": ["ResourceManagement", "Timing"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "surge_master", "Amount": 1 },
+        { "Type": "Resource", "Id": "Aether", "Amount": 1000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -10 Willpower, lose capacitor", "Severity": 3 },
+        { "Type": "TraitLoss", "Description": "Lose 'instant_cast_1'", "Severity": 2 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Power hums in your chest. Street gangs avoid you. A corporate headhunter slides a contract across the table."
+  },
+  {
+    "Index": 3,
+    "Id": "spell_driver",
+    "Name": "Spell Driver",
+    "Description": "Dedicated co-processor for spell execution. Parallel casting, reduced latency, combo chains unlocked.",
+    "Stage": 1,
+    "StatGains": { "Might": 0, "Agility": 5, "Intellect": 15, "Willpower": 5, "Presence": 0, "Integration": 10 },
+    "GrantedTraits": ["parallel_casting", "combo_chain_2", "driver_optimization"],
+    "UnlockedMechanics": ["spell_chaining", "circuit_hotswap"],
+    "UnlockedResources": ["Compute"],
+    "BreakthroughReq": {
+      "MinLevel": 5,
+      "MinStage": 1,
+      "StatThresholds": { "Might": 0, "Agility": 30, "Intellect": 120, "Willpower": 80, "Presence": 0, "Integration": 90 },
+      "RequiredTraits": ["parallel_casting"],
+      "RequiredItems": ["driver_chip_t2", "quantum_cooler", "aether_conduit_x2"],
+      "CorpReputation": [0,0,0,0,0],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_3",
+      "Name": "System Audit: Driver Conflict",
+      "Description": "Multiple spell processes compete for CPU. Optimize or crash.",
+      "Type": "SystemAudit",
+      "Difficulty": 4,
+      "Threats": [
+        { "Type": "Internal", "Description": "Process deadlock", "PowerLevel": 20, "DamageTypes": ["Data", "Psychic"], "Mechanics": ["Hacking", "ResourceManagement"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "driver_harmony", "Amount": 1 },
+        { "Type": "Resource", "Id": "Compute", "Amount": 200 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -10 Intellect, -5 Agility", "Severity": 3 },
+        { "Type": "Corruption", "Description": "Gain 'glitchy_casting' trait", "Severity": 2 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Spells chain like music. You're a known quantity now. Corps send assassins, not recruiters."
+  },
+  {
+    "Index": 4,
+    "Id": "co_processor",
+    "Name": "Co-Processor",
+    "Description": "Secondary neural core. Background processes: auto-hack, threat analysis, spell queuing. Mind becomes a server.",
+    "Stage": 1,
+    "StatGains": { "Might": 0, "Agility": 0, "Intellect": 20, "Willpower": 15, "Presence": 5, "Integration": 20 },
+    "GrantedTraits": ["background_processes", "auto_hack", "threat_analysis", "server_mind"],
+    "UnlockedMechanics": ["background_hacking", "predictive_combat", "daemon_hosting"],
+    "UnlockedResources": ["Reputation"],
+    "BreakthroughReq": {
+      "MinLevel": 8,
+      "MinStage": 1,
+      "StatThresholds": { "Might": 0, "Agility": 40, "Intellect": 180, "Willpower": 120, "Presence": 20, "Integration": 130 },
+      "RequiredTraits": ["server_mind"],
+      "RequiredItems": ["coprocessor_core_t3", "neural_gel_x10", "daemon_seed"],
+      "CorpReputation": [10,10,10,10,10],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "black_ice_1",
+      "Name": "Black ICE: Intrusion Countermeasures",
+      "Description": "Hostile ICE probes your co-processor. Defend your mind or be flatlined.",
+      "Type": "BlackICE",
+      "Difficulty": 5,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Corporate Black ICE construct", "PowerLevel": 30, "DamageTypes": ["Data", "Psychic", "Energy"], "Mechanics": ["Hacking", "Combat", "Timing"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "ice_breaker", "Amount": 1 },
+        { "Type": "Item", "Id": "black_ice_fragment", "Amount": 1 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -15 Intellect, -10 Willpower", "Severity": 4 },
+        { "Type": "TraitLoss", "Description": "Lose 'background_processes', 'auto_hack'", "Severity": 3 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Your mind runs daemons. You dream in code. A daemon whispers: 'We could be so much more.'"
+  },
+  {
+    "Index": 5,
+    "Id": "subdermal_armor",
+    "Name": "Subdermal Armor",
+    "Description": "Ceramic-weave mesh under skin. Kinetic barrier projected from within. Bullets flatten, blades skip.",
+    "Stage": 1,
+    "StatGains": { "Might": 10, "Agility": -5, "Intellect": 0, "Willpower": 10, "Presence": 5, "Integration": 25 },
+    "GrantedTraits": ["kinetic_barrier", "armor_skin", "internal_climate"],
+    "UnlockedMechanics": ["armor_overcharge", "environmental_seal"],
+    "UnlockedResources": [],
+    "BreakthroughReq": {
+      "MinLevel": 11,
+      "MinStage": 1,
+      "StatThresholds": { "Might": 50, "Agility": 30, "Intellect": 150, "Willpower": 140, "Presence": 30, "Integration": 160 },
+      "RequiredTraits": ["kinetic_barrier"],
+      "RequiredItems": ["ceramic_weave", "micro_projector_x4", "power_cell_dense"],
+      "CorpReputation": [20,10,0,20,0],
+      "RequiresSecludedResearch": false,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "system_audit_4",
+      "Name": "System Audit: Armor Integration",
+      "Description": "Your body rejects the foreign mesh. Suppress immune response or necrose.",
+      "Type": "SystemAudit",
+      "Difficulty": 5,
+      "Threats": [
+        { "Type": "Internal", "Description": "Cybernetic rejection syndrome", "PowerLevel": 25, "DamageTypes": ["Poison", "Kinetic"], "Mechanics": ["ResourceManagement", "Timing"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "integrated_chassis", "Amount": 1 },
+        { "Type": "Resource", "Id": "Credits", "Amount": 50000 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -15 Might, -10 Integration", "Severity": 4 },
+        { "Type": "TraitLoss", "Description": "Lose 'kinetic_barrier'", "Severity": 3 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "Flesh and chrome unite. You walk through gunfire. The street learns your name."
+  },
+  {
+    "Index": 6,
+    "Id": "overclock_protocol",
+    "Name": "Overclock Protocol",
+    "Description": "Safety limits removed. Push every system beyond redline. Burn bright, burn fast.",
+    "Stage": 1,
+    "StatGains": { "Might": 15, "Agility": 15, "Intellect": 15, "Willpower": 15, "Presence": 10, "Integration": 30 },
+    "GrantedTraits": ["overclock_mastery", "redline_access", "thermal_venting"],
+    "UnlockedMechanics": ["overclock_burst", "thermal_management", "limit_break"],
+    "UnlockedResources": ["Entropy"],
+    "BreakthroughReq": {
+      "MinLevel": 14,
+      "MinStage": 1,
+      "StatThresholds": { "Might": 80, "Agility": 70, "Intellect": 220, "Willpower": 180, "Presence": 50, "Integration": 200 },
+      "RequiredTraits": ["redline_access", "thermal_venting"],
+      "RequiredItems": ["overclock_firmware", "cryo_coolant_x20", "entropy_stabilizer"],
+      "CorpReputation": [30,20,10,30,20],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "black_ice_2",
+      "Name": "Black ICE: Thermal Runaway",
+      "Description": "Overclock attracts predator ICE. Survive the hunt while your body cooks.",
+      "Type": "BlackICE",
+      "Difficulty": 6,
+      "Threats": [
+        { "Type": "Enemy", "Description": "Thermal Hunter ICE", "PowerLevel": 40, "DamageTypes": ["Fire", "Data", "Kinetic"], "Mechanics": ["Combat", "Hacking", "ThermalManagement"] },
+        { "Type": "Environmental", "Description": "Own heat buildup", "PowerLevel": 35, "DamageTypes": ["Fire"], "Mechanics": ["ResourceManagement"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "thermal_apex", "Amount": 1 },
+        { "Type": "Resource", "Id": "Entropy", "Amount": 50 }
+      ],
+      "FailureConsequences": [
+        { "Type": "StatDrain", "Description": "Permanent -20 across all stats", "Severity": 5 },
+        { "Type": "Corruption", "Description": "Gain 'thermal_scars' - permanent fire vulnerability", "Severity": 3 }
+      ],
+      "IsScripted": false
+    },
+    "NarrativeBeat": "You are a supernova contained in skin. Corps declare you 'Asset Class: Strategic'. War begins."
+  },
+  {
+    "Index": 7,
+    "Id": "chrome_zenith",
+    "Name": "Chrome Zenith",
+    "Description": "Peak of street cybernetics. Full body conversion optional. You are the ghost in the machine perfected.",
+    "Stage": 1,
+    "StatGains": { "Might": 20, "Agility": 20, "Intellect": 20, "Willpower": 20, "Presence": 20, "Integration": 50 },
+    "GrantedTraits": ["chrome_perfection", "full_conversion_ready", "legendary_street_cred"],
+    "UnlockedMechanics": ["full_body_swap", "chrome_aura", "corp_bounty_immunity"],
+    "UnlockedResources": ["AdminTokens"],
+    "BreakthroughReq": {
+      "MinLevel": 18,
+      "MinStage": 1,
+      "StatThresholds": { "Might": 120, "Agility": 110, "Intellect": 300, "Willpower": 250, "Presence": 100, "Integration": 300 },
+      "RequiredTraits": ["chrome_perfection"],
+      "RequiredItems": ["zenith_firmware", "adamantium_frame", "soul_anchor", "aether_heart"],
+      "CorpReputation": [50,30,20,50,30],
+      "RequiresSecludedResearch": true,
+      "RequiresBreakthroughInsight": true
+    },
+    "Tribulation": {
+      "Id": "orbital_strike_1",
+      "Name": "Orbital Strike: Corporate Sanction",
+      "Description": "All five corps authorize kinetic strike on your position. Survive the rod from god.",
+      "Type": "OrbitalStrike",
+      "Difficulty": 8,
+      "Threats": [
+        { "Type": "Environmental", "Description": "Tungsten rod impact (city-block level)", "PowerLevel": 80, "DamageTypes": ["Kinetic", "Fire", "Entropic"], "Mechanics": ["Evasion", "Shielding", "Timing"] },
+        { "Type": "Enemy", "Description": "Corp kill-teams (5 squads)", "PowerLevel": 50, "DamageTypes": ["Kinetic", "Energy", "Data"], "Mechanics": ["Combat", "Hacking", "Stealth"] }
+      ],
+      "SuccessRewards": [
+        { "Type": "Trait", "Id": "sanction_survivor", "Amount": 1 },
+        { "Type": "Resource", "Id": "AdminTokens", "Amount": 10 },
+        { "Type": "Unlock", "Id": "Stage2_Core", "Amount": 1 }
+      ],
+      "FailureConsequences": [
+        { "Type": "Death", "Description": "Character deleted. New Game+ available.", "Severity": 5 }
+      ],
+      "IsScripted": true
+    },
+    "NarrativeBeat": "The rod misses. The corps blink. You stand in the crater, whole. The Circuit stage ends. The Core begins."
+  }
+]
